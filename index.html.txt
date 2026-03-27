@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Consórcio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: transparent; 
+      display: flex; 
+      justify-content: center; 
+      padding: 0;
+    }
+    #simulador-consorcio { width: 100%; max-width: 420px; }
+  </style>
+</head>
+<body>
+  <div id="simulador-consorcio"></div>
+  <script src="simulador-consorcio.js"></script>
+</body>
+</html>
