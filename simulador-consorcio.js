@@ -327,7 +327,7 @@
   const S = { tipo:null, valor:0, parcela:0, mode:"carta", prazo:0, nome:"", tel:"", email:"", contractId:null, simData:null };
 
   /* ─── HELPERS ─── */
-  const fmt  = v => "R$ " + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+  const fmt  = v => "R$\u00A0" + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
   const now  = () => { const d=new Date(); return d.getHours().toString().padStart(2,"0")+":"+d.getMinutes().toString().padStart(2,"0"); };
   const sl   = ms => new Promise(r => setTimeout(r, ms));
   const $    = id => document.getElementById(id);
