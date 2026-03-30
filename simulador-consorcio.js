@@ -199,7 +199,7 @@
 .csc-crow-v { font-weight:700; color:#1a1a2e; }
 .csc-sign-btn {
   margin:12px 16px 14px; width:calc(100% - 32px); padding:12px; border-radius:12px;
-  background:linear-gradient(135deg,#c0392b,#1440fe); color:#fff;
+  background:linear-gradient(135deg,#001a91,#1440fe); color:#fff;
   border:none; font-weight:800; font-size:.88rem; cursor:pointer;
   font-family:'Nunito',sans-serif; display:block; text-align:center;
   transition:opacity .15s;
@@ -213,7 +213,7 @@
   padding:14px 16px; cursor:pointer; display:flex; align-items:center; gap:12px;
   transition:all .15s;
 }
-.csc-pay-opt:hover { border-color:#c0392b; box-shadow:0 4px 14px rgba(192,57,43,.12); }
+.csc-pay-opt:hover { border-color:#001a91; box-shadow:0 4px 14px rgba(192,57,43,.12); }
 .csc-pay-ico { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
 .csc-pay-info { flex:1; }
 .csc-pay-name { font-weight:800; font-size:.88rem; color:#1a1a2e; }
@@ -229,7 +229,7 @@
 .csc-pix-key { background:#f8f9fb; border:1px solid #eee; border-radius:8px; padding:8px 12px; font-size:.72rem; color:#555; margin-bottom:10px; word-break:break-all; text-align:left; }
 .csc-copy { width:100%; padding:10px; border-radius:10px; background:#e8f8f4; border:1px solid rgba(0,123,110,.25); color:#007b6e; font-weight:800; font-size:.82rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:background .15s; }
 .csc-copy:hover { background:#d0f4ec; }
-.csc-confirm-btn { width:100%; padding:11px; border-radius:10px; background:linear-gradient(135deg,#c0392b,#1440fe); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
+.csc-confirm-btn { width:100%; padding:11px; border-radius:10px; background:linear-gradient(135deg,#001a91,#1440fe); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
 .csc-confirm-btn:hover { opacity:.9; }
 /* BOLETO */
 .csc-boleto { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); padding:18px; margin:4px 14px 0; animation:csc-in .25s ease; }
@@ -240,14 +240,14 @@
 .csc-boleto-item-v { font-size:.88rem; font-weight:800; color:#1a1a2e; margin-top:2px; }
 .csc-boleto-num { font-size:.65rem; color:#aaa; text-align:center; margin-bottom:12px; }
 .csc-copy-bol { width:100%; padding:10px; border-radius:10px; border:2px solid #eee; background:#fff; color:#555; font-weight:700; font-size:.8rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:all .15s; }
-.csc-copy-bol:hover { border-color:#c0392b; color:#c0392b; }
+.csc-copy-bol:hover { border-color:#001a91; color:#001a91; }
 /* CARD FORM */
 .csc-cardform { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); padding:18px; margin:4px 14px 0; animation:csc-in .25s ease; }
 .csc-finput { width:100%; border:2px solid #eee; border-radius:10px; padding:10px 14px; font-size:.85rem; font-family:'Nunito',sans-serif; color:#1a1a2e; outline:none; transition:border-color .15s; margin-bottom:8px; background:#fff; }
-.csc-finput:focus { border-color:#c0392b; }
+.csc-finput:focus { border-color:#001a91; }
 .csc-finput::placeholder { color:#bbb; }
 .csc-finput-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.csc-pay-card-btn { width:100%; padding:12px; border-radius:10px; margin-top:4px; background:linear-gradient(135deg,#c0392b,#1440fe); color:#fff; border:none; font-weight:800; font-size:.9rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
+.csc-pay-card-btn { width:100%; padding:12px; border-radius:10px; margin-top:4px; background:linear-gradient(135deg,#001a91,#1440fe); color:#fff; border:none; font-weight:800; font-size:.9rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
 .csc-pay-card-btn:hover { opacity:.9; }
 /* SUCCESS */
 .csc-success { text-align:center; padding:8px 4px; animation:csc-in .25s ease; margin:4px 14px 0; }
@@ -261,10 +261,10 @@
 .csc-reply {
   padding:8px 16px; border-radius:22px; border:2px solid rgba(192,57,43,.25);
   font-size:.8rem; font-weight:700; cursor:pointer;
-  color:#c0392b; background:rgba(192,57,43,.04);
+  color:#001a91; background:rgba(192,57,43,.04);
   transition:all .15s; font-family:'Nunito',sans-serif;
 }
-.csc-reply:hover { background:#c0392b; color:#fff; border-color:#c0392b; }
+.csc-reply:hover { background:#001a91; color:#fff; border-color:#001a91; }
 .csc-reply.wide { flex:1; text-align:center; }
 .csc-reply.sec { color:#888; border-color:#ddd; background:#fff; }
 .csc-reply.sec:hover { background:#f0f2f5; color:#555; border-color:#ccc; }
@@ -272,9 +272,9 @@
 .csc-inp-wrap { display:none; align-items:center; gap:8px; }
 .csc-inp-wrap.on { display:flex; }
 .csc-text-inp { flex:1; border:2px solid #eee; border-radius:24px; padding:10px 16px; font-size:.85rem; font-family:'Nunito',sans-serif; outline:none; transition:border-color .15s; background:#f8f9fb; color:#1a1a2e; }
-.csc-text-inp:focus { border-color:#c0392b; background:#fff; }
+.csc-text-inp:focus { border-color:#001a91; background:#fff; }
 .csc-text-inp::placeholder { color:#bbb; }
-.csc-send { width:40px; height:40px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,#c0392b,#1440fe); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#fff; box-shadow:0 4px 12px rgba(192,57,43,.35); transition:transform .12s; }
+.csc-send { width:40px; height:40px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,#001a91,#1440fe); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#fff; box-shadow:0 4px 12px rgba(192,57,43,.35); transition:transform .12s; }
 .csc-send:hover { transform:scale(1.08); }
     `;
     document.head.appendChild(style);
