@@ -190,7 +190,7 @@
 /* CONTRACT */
 .csc-contract { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-contract-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
-.csc-contract-ico { width:32px; height:32px; background:linear-gradient(135deg,#c0392b,#9b2226); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
+.csc-contract-ico { width:32px; height:32px; background:linear-gradient(135deg,#c0392b,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
 .csc-contract-ttl { font-weight:800; font-size:.85rem; color:#1a1a2e; }
 .csc-contract-id { font-size:.63rem; color:#aaa; }
 .csc-crow { display:flex; justify-content:space-between; padding:8px 16px; border-bottom:1px solid #f0f2f5; font-size:.78rem; }
@@ -199,7 +199,7 @@
 .csc-crow-v { font-weight:700; color:#1a1a2e; }
 .csc-sign-btn {
   margin:12px 16px 14px; width:calc(100% - 32px); padding:12px; border-radius:12px;
-  background:linear-gradient(135deg,#c0392b,#9b2226); color:#fff;
+  background:linear-gradient(135deg,#c0392b,#1440fe); color:#fff;
   border:none; font-weight:800; font-size:.88rem; cursor:pointer;
   font-family:'Nunito',sans-serif; display:block; text-align:center;
   transition:opacity .15s;
