@@ -72,7 +72,7 @@
   padding:8px 20px; display:flex; align-items:center; gap:8px; flex-shrink:0;
 }
 .csc-step-dot { width:8px; height:8px; border-radius:50%; background:#ddd; transition:all .3s; flex-shrink:0; }
-.csc-step-dot.done  { background:#007b6e; }
+.csc-step-dot.done  { background:#1440fe; }
 .csc-step-dot.active { background:#1440fe; width:22px; border-radius:4px; }
 .csc-step-label { margin-left:auto; font-size:.65rem; font-weight:700; color:#aaa; letter-spacing:.05em; text-transform:uppercase; }
 /* MESSAGES */
@@ -88,7 +88,7 @@
 .csc-row.usr { flex-direction:row-reverse; }
 .csc-ava {
   width:30px; height:30px; border-radius:50%; flex-shrink:0;
-  background:linear-gradient(135deg,#1440fe,#007b6e);
+  background:linear-gradient(135deg,#1440fe,#1440fe);
   display:flex; align-items:center; justify-content:center; font-size:.8rem;
   box-shadow:0 2px 8px rgba(0,0,0,.12);
 }
@@ -101,7 +101,7 @@
 .csc-row.bot .csc-bub { background:#fff; color:#2d3436; border-bottom-left-radius:4px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
 .csc-row.usr .csc-bub { background:linear-gradient(135deg,#1440fe#1440fe); color:#fff; border-bottom-right-radius:4px; }
 .csc-bub b { font-weight:800; }
-.csc-bub .g { color:#007b6e; }
+.csc-bub .g { color:#1440fe; }
 .csc-time { font-size:.58rem; color:#bbb; margin-top:2px; align-self:flex-end; }
 .csc-row.usr .csc-time { text-align:right; }
 /* TYPING */
@@ -175,7 +175,7 @@
   background:#fff; border-radius:16px; overflow:hidden;
   box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; animation:csc-in .25s ease;
 }
-.csc-result-header { background:linear-gradient(120deg,#001a91,#007b6e); padding:14px 16px; color:#fff; }
+.csc-result-header { background:linear-gradient(120deg,#001a91,#1440fe); padding:14px 16px; color:#fff; }
 .csc-result-tipo { font-size:.65rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; opacity:.75; margin-bottom:2px; }
 .csc-result-parcela { font-size:1.8rem; font-weight:900; letter-spacing:-.03em; }
 .csc-result-parcela small { font-size:.85rem; font-weight:600; opacity:.75; margin-left:3px; }
@@ -184,9 +184,9 @@
 .csc-ritem { background:#fff; padding:11px 14px; }
 .csc-ritem-l { font-size:.62rem; text-transform:uppercase; letter-spacing:.07em; font-weight:700; color:#aaa; margin-bottom:3px; }
 .csc-ritem-v { font-size:.88rem; font-weight:800; color:#1a1a2e; }
-.csc-ritem-v.g { color:#007b6e; }
+.csc-ritem-v.g { color:#1440fe; }
 .csc-badge-row { padding:10px 14px; }
-.csc-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(0,123,110,.08); border:1px solid rgba(0,123,110,.2); border-radius:20px; padding:4px 10px; font-size:.7rem; font-weight:700; color:#007b6e; }
+.csc-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(0,123,110,.08); border:1px solid rgba(0,123,110,.2); border-radius:20px; padding:4px 10px; font-size:.7rem; font-weight:700; color:#1440fe; }
 /* CONTRACT */
 .csc-contract { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-contract-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
@@ -205,7 +205,7 @@
   transition:opacity .15s;
 }
 .csc-sign-btn:hover { opacity:.9; }
-.csc-signed-ok { display:none; margin:0 16px 14px; padding:10px; border-radius:10px; background:#e8f8f4; color:#007b6e; font-weight:700; font-size:.8rem; text-align:center; }
+.csc-signed-ok { display:none; margin:0 16px 14px; padding:10px; border-radius:10px; background:#e8f8f4; color:#1440fe; font-weight:700; font-size:.8rem; text-align:center; }
 /* PAYMENT OPTIONS */
 .csc-pay-btns { display:grid; grid-template-columns:1fr; gap:8px; margin:4px 14px 10px; animation:csc-in .25s ease; }
 .csc-pay-opt {
@@ -227,7 +227,7 @@
 .csc-pix-val { font-size:1.6rem; font-weight:900; color:#1a1a2e; margin-bottom:4px; }
 .csc-pix-sub { font-size:.72rem; color:#888; margin-bottom:12px; }
 .csc-pix-key { background:#f8f9fb; border:1px solid #eee; border-radius:8px; padding:8px 12px; font-size:.72rem; color:#555; margin-bottom:10px; word-break:break-all; text-align:left; }
-.csc-copy { width:100%; padding:10px; border-radius:10px; background:#e8f8f4; border:1px solid rgba(0,123,110,.25); color:#007b6e; font-weight:800; font-size:.82rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:background .15s; }
+.csc-copy { width:100%; padding:10px; border-radius:10px; background:#e8f8f4; border:1px solid rgba(0,123,110,.25); color:#1440fe; font-weight:800; font-size:.82rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:background .15s; }
 .csc-copy:hover { background:#d0f4ec; }
 .csc-confirm-btn { width:100%; padding:11px; border-radius:10px; background:linear-gradient(135deg,#001a91,#1440fe); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
 .csc-confirm-btn:hover { opacity:.9; }
@@ -253,7 +253,7 @@
 .csc-success { text-align:center; padding:8px 4px; animation:csc-in .25s ease; margin:4px 14px 0; }
 .csc-success-ani { font-size:2.6rem; animation:csc-pop .5s cubic-bezier(.34,1.56,.64,1); margin-bottom:8px; }
 @keyframes csc-pop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
-.csc-success-ttl { font-weight:900; font-size:1.05rem; color:#007b6e; margin-bottom:6px; }
+.csc-success-ttl { font-weight:900; font-size:1.05rem; color:#1440fe; margin-bottom:6px; }
 .csc-success-id { font-size:.72rem; background:#f0f2f5; border-radius:6px; padding:4px 10px; display:inline-block; margin:8px 0; color:#555; }
 .csc-success-txt { font-size:.8rem; color:#666; line-height:1.6; }
 /* CONTROLS */
@@ -732,7 +732,7 @@
       <div class="csc-success-ani">🎉</div>
       <div class="csc-success-ttl">Pagamento Confirmado!</div>
       <div class="csc-success-id">${S.contractId}</div>
-      <div class="csc-success-txt">Sua <b style="color:#007b6e">cota está ativa</b>!<br>Você receberá os detalhes em <b>${S.email}</b>.<br><br>Bem-vindo(a) ao grupo Autopilot Consórcios! 🚀</div>
+      <div class="csc-success-txt">Sua <b style="color:#1440fe">cota está ativa</b>!<br>Você receberá os detalhes em <b>${S.email}</b>.<br><br>Bem-vindo(a) ao grupo Autopilot Consórcios! 🚀</div>
     </div>`);
     await typing(700);
     await addBot(`Qualquer dúvida, fale conosco pelo WhatsApp. Obrigado, <b>${S.nome.split(" ")[0]}</b>! 😊`);
