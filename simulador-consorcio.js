@@ -88,9 +88,10 @@
   box-shadow:0 2px 8px rgba(0,0,0,.12);
 }
 .csc-bub {
-  max-width:78%; padding:11px 14px; border-radius:18px;
-  font-size:.88rem; line-height:1.55;
-  animation:csc-in .2s ease; position:relative; word-wrap:break-word;
+  max-width: 100%; /* Mudamos para 100% para ele usar o espaço todo permitido pela caixa pai */
+  padding: 11px 14px; border-radius: 18px;
+  font-size: .88rem; line-height: 1.55;
+  animation: csc-in .2s ease; position: relative; word-wrap: break-word;
 }
 @keyframes csc-in { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
 .csc-row.bot .csc-bub { background:#fff; color:#2d3436; border-bottom-left-radius:4px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
