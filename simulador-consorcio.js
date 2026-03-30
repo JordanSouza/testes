@@ -73,7 +73,7 @@
 }
 .csc-step-dot { width:8px; height:8px; border-radius:50%; background:#ddd; transition:all .3s; flex-shrink:0; }
 .csc-step-dot.done  { background:#007b6e; }
-.csc-step-dot.active { background:#c0392b; width:22px; border-radius:4px; }
+.csc-step-dot.active { background:#1440fe; width:22px; border-radius:4px; }
 .csc-step-label { margin-left:auto; font-size:.65rem; font-weight:700; color:#aaa; letter-spacing:.05em; text-transform:uppercase; }
 /* MESSAGES */
 .csc-msgs {
@@ -88,7 +88,7 @@
 .csc-row.usr { flex-direction:row-reverse; }
 .csc-ava {
   width:30px; height:30px; border-radius:50%; flex-shrink:0;
-  background:linear-gradient(135deg,#c0392b,#007b6e);
+  background:linear-gradient(135deg,#1440fe,#007b6e);
   display:flex; align-items:center; justify-content:center; font-size:.8rem;
   box-shadow:0 2px 8px rgba(0,0,0,.12);
 }
@@ -99,7 +99,7 @@
 }
 @keyframes csc-in { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
 .csc-row.bot .csc-bub { background:#fff; color:#2d3436; border-bottom-left-radius:4px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
-.csc-row.usr .csc-bub { background:linear-gradient(135deg,#c0392b,#9b2226); color:#fff; border-bottom-right-radius:4px; }
+.csc-row.usr .csc-bub { background:linear-gradient(135deg,#1440fe,#9b2226); color:#fff; border-bottom-right-radius:4px; }
 .csc-bub b { font-weight:800; }
 .csc-bub .g { color:#007b6e; }
 .csc-time { font-size:.58rem; color:#bbb; margin-top:2px; align-self:flex-end; }
@@ -109,7 +109,7 @@
 .csc-tdot { width:7px; height:7px; border-radius:50%; background:#ccc; animation:csc-td .8s infinite ease-in-out; }
 .csc-tdot:nth-child(2) { animation-delay:.14s; }
 .csc-tdot:nth-child(3) { animation-delay:.28s; }
-@keyframes csc-td { 0%,60%,100%{transform:translateY(0);background:#ccc} 30%{transform:translateY(-5px);background:#c0392b} }
+@keyframes csc-td { 0%,60%,100%{transform:translateY(0);background:#ccc} 30%{transform:translateY(-5px);background:#1440fe} }
 /* CARDS */
 .csc-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:4px 14px 0; animation:csc-in .25s ease; }
 .csc-card {
@@ -118,7 +118,7 @@
   transition:border-color .18s, transform .15s, box-shadow .18s;
   display:flex; flex-direction:column; align-items:center; gap:6px;
 }
-.csc-card:hover { border-color:#c0392b; transform:translateY(-2px); box-shadow:0 6px 24px rgba(192,57,43,.15); }
+.csc-card:hover { border-color:#1440fe; transform:translateY(-2px); box-shadow:0 6px 24px rgba(192,57,43,.15); }
 .csc-card-ico {
   width:60px; height:60px; border-radius:50%;
   background:linear-gradient(135deg,rgba(192,57,43,.1),rgba(0,123,110,.1));
@@ -128,12 +128,12 @@
 .csc-card-sub { font-size:.68rem; color:#888; line-height:1.4; }
 .csc-card-plus {
   width:22px; height:22px; border-radius:50%;
-  border:2px solid #c0392b; color:#c0392b;
+  border:2px solid #1440fe; color:#1440fe;
   display:flex; align-items:center; justify-content:center;
   font-size:.9rem; font-weight:700;
   transition:background .15s, color .15s;
 }
-.csc-card:hover .csc-card-plus { background:#c0392b; color:#fff; }
+.csc-card:hover .csc-card-plus { background:#1440fe; color:#fff; }
 /* SLIDER */
 .csc-slider-wrap {
   background:#fff; border-radius:16px; padding:18px 16px;
