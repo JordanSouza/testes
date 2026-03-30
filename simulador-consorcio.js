@@ -99,7 +99,7 @@
 }
 @keyframes csc-in { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
 .csc-row.bot .csc-bub { background:#fff; color:#2d3436; border-bottom-left-radius:4px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
-.csc-row.usr .csc-bub { background:linear-gradient(135deg,#1440fe#1440fe); color:#0A2DC7; border-bottom-right-radius:4px; }
+.csc-row.usr .csc-bub { background:#0A2DC7; color:#fff; border-bottom-right-radius:4px; }
 .csc-bub b { font-weight:800; }
 .csc-bub .g { color:#1440fe; }
 .csc-time { font-size:.58rem; color:#bbb; margin-top:2px; align-self:flex-end; }
