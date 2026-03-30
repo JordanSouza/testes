@@ -23,17 +23,19 @@
     const style = document.createElement("style");
     style.id = "csc-styles";
     style.textContent = `
-#simulador-consorcio { width: 100%; max-width: 420px; }
+/* Tira a margem padrão do navegador dentro do iframe */
+html, body { margin: 0; padding: 0; height: 100%; background: transparent; overflow: hidden; }
+
+#simulador-consorcio { width: 100%; height: 100%; }
+
 .csc-widget {
   font-family: 'Nunito', sans-serif;
   background: #fff;
   border-radius: 22px;
-  box-shadow: 0 12px 60px rgba(0,0,0,.16), 0 2px 8px rgba(0,0,0,.06);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  max-height: 680px;
-  min-height: 540px;
+  height: 100%; /* Força o widget a esticar e ocupar 100% da altura do iframe */
   position: relative;
 }
 .csc-header {
