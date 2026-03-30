@@ -164,7 +164,7 @@
 .csc-pill {
   padding:8px 16px; border-radius:22px; border:2px solid #eee;
   font-size:.8rem; font-weight:700; cursor:pointer; background:#fff;
-  transition:all .15s; color:#555; font-family:'Nunito',sans-serif;
+  transition:all .15s; color:#555; font-family:'Nunito',sans-serif;white-space: nowrap;
 }
 .csc-pill:hover { border-color:#1440fe; color:#1440fe; }
 .csc-pill.on { background:#1440fe; border-color:#1440fe; color:#fff; }
