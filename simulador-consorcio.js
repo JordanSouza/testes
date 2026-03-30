@@ -229,7 +229,7 @@
 .csc-pix-key { background:#f8f9fb; border:1px solid #eee; border-radius:8px; padding:8px 12px; font-size:.72rem; color:#555; margin-bottom:10px; word-break:break-all; text-align:left; }
 .csc-copy { width:100%; padding:10px; border-radius:10px; background:#e8f8f4; border:1px solid rgba(0,123,110,.25); color:#007b6e; font-weight:800; font-size:.82rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:background .15s; }
 .csc-copy:hover { background:#d0f4ec; }
-.csc-confirm-btn { width:100%; padding:11px; border-radius:10px; background:linear-gradient(135deg,#c0392b,#9b2226); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
+.csc-confirm-btn { width:100%; padding:11px; border-radius:10px; background:linear-gradient(135deg,#c0392b,#1440fe); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
 .csc-confirm-btn:hover { opacity:.9; }
 /* BOLETO */
 .csc-boleto { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); padding:18px; margin:4px 14px 0; animation:csc-in .25s ease; }
@@ -247,7 +247,7 @@
 .csc-finput:focus { border-color:#c0392b; }
 .csc-finput::placeholder { color:#bbb; }
 .csc-finput-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.csc-pay-card-btn { width:100%; padding:12px; border-radius:10px; margin-top:4px; background:linear-gradient(135deg,#c0392b,#9b2226); color:#fff; border:none; font-weight:800; font-size:.9rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
+.csc-pay-card-btn { width:100%; padding:12px; border-radius:10px; margin-top:4px; background:linear-gradient(135deg,#c0392b,#1440fe); color:#fff; border:none; font-weight:800; font-size:.9rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
 .csc-pay-card-btn:hover { opacity:.9; }
 /* SUCCESS */
 .csc-success { text-align:center; padding:8px 4px; animation:csc-in .25s ease; margin:4px 14px 0; }
@@ -274,7 +274,7 @@
 .csc-text-inp { flex:1; border:2px solid #eee; border-radius:24px; padding:10px 16px; font-size:.85rem; font-family:'Nunito',sans-serif; outline:none; transition:border-color .15s; background:#f8f9fb; color:#1a1a2e; }
 .csc-text-inp:focus { border-color:#c0392b; background:#fff; }
 .csc-text-inp::placeholder { color:#bbb; }
-.csc-send { width:40px; height:40px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,#c0392b,#9b2226); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#fff; box-shadow:0 4px 12px rgba(192,57,43,.35); transition:transform .12s; }
+.csc-send { width:40px; height:40px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,#c0392b,#1440fe); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#fff; box-shadow:0 4px 12px rgba(192,57,43,.35); transition:transform .12s; }
 .csc-send:hover { transform:scale(1.08); }
     `;
     document.head.appendChild(style);
