@@ -305,16 +305,19 @@
   };
 
   /* ─── CONFIG SLIDER por tipo e modo ─── */
-  const SLIDER = {
-    imovel: {
-      carta:   { min:100000, max:800000, step:10000, fmtMin:"R$ 100 mil", fmtMax:"R$ 800 mil", label:"Valor da Carta de Crédito" },
-      parcela: { min:500,    max:5000,   step:50,    fmtMin:"R$ 500",     fmtMax:"R$ 5.000",   label:"Valor da Parcela Mensal" }
-    },
-    veiculo: {
-      carta:   { min:30000,  max:350000, step:5000,  fmtMin:"R$ 30 mil",  fmtMax:"R$ 350 mil", label:"Valor da Carta de Crédito" },
-      parcela: { min:200,    max:3000,   step:50,    fmtMin:"R$ 200",     fmtMax:"R$ 3.000",   label:"Valor da Parcela Mensal" }
-    }
-  };
+ /* ─── CONFIG SLIDER por tipo e modo ─── */
+  const SLIDER = {
+    imovel: {
+      carta:   { min:100000, max:800000, step:10000, fmtMin:"R$ 100 mil", fmtMax:"R$ 800 mil", label:"Valor da Carta de Crédito" },
+      // Limite de parcela aumentado para 5500 para comportar a carta de 800k em 180x
+      parcela: { min:600,    max:5500,   step:50,    fmtMin:"R$ 600",     fmtMax:"R$ 5.500",   label:"Valor da Parcela Mensal" }
+    },
+    veiculo: {
+      carta:   { min:30000,  max:350000, step:5000,  fmtMin:"R$ 30 mil",  fmtMax:"R$ 350 mil", label:"Valor da Carta de Crédito" },
+      // Limite de parcela aumentado para 7500 para comportar a carta de 350k em 60x
+      parcela: { min:500,    max:7500,   step:50,    fmtMin:"R$ 500",     fmtMax:"R$ 7.500",   label:"Valor da Parcela Mensal" }
+    }
+  };
 
   const STEPS  = ["welcome","tipo","valor","prazo","sim","confirm","nome","tel","email","contrato","pagamento","pix","cartao","boleto","fim"];
   const LABELS = { welcome:"Início",tipo:"Tipo",valor:"Valor",prazo:"Prazo",sim:"Simulação",confirm:"Confirmação",nome:"Cadastro",tel:"Cadastro",email:"Cadastro",contrato:"Contrato",pagamento:"Pagamento",pix:"PIX",cartao:"Cartão",boleto:"Boleto",fim:"Concluído" };
