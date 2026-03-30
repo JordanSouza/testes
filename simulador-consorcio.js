@@ -153,11 +153,11 @@
 .csc-range {
   width:100%; height:5px; -webkit-appearance:none; appearance:none;
   border-radius:10px; outline:none; cursor:pointer;
-  background:linear-gradient(90deg,#c0392b var(--pct,10%),#e0e0e0 var(--pct,10%));
+  background:linear-gradient(90deg,#001a91 var(--pct,10%),#e0e0e0 var(--pct,10%));
 }
 .csc-range::-webkit-slider-thumb {
   -webkit-appearance:none; width:20px; height:20px; border-radius:50%;
-  background:#c0392b; cursor:pointer; border:3px solid #fff;
+  background:#001a91; cursor:pointer; border:3px solid #fff;
   box-shadow:0 2px 8px rgba(192,57,43,.4);
 }
 .csc-range-labels { display:flex; justify-content:space-between; font-size:.67rem; color:#bbb; margin-top:6px; font-weight:600; }
@@ -168,14 +168,14 @@
   font-size:.8rem; font-weight:700; cursor:pointer; background:#fff;
   transition:all .15s; color:#555; font-family:'Nunito',sans-serif;
 }
-.csc-pill:hover { border-color:#c0392b; color:#c0392b; }
-.csc-pill.on { background:#c0392b; border-color:#c0392b; color:#fff; }
+.csc-pill:hover { border-color:#001a91; color:#001a91; }
+.csc-pill.on { background:#001a91; border-color:#001a91; color:#fff; }
 /* RESULT CARD */
 .csc-result {
   background:#fff; border-radius:16px; overflow:hidden;
   box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; animation:csc-in .25s ease;
 }
-.csc-result-header { background:linear-gradient(120deg,#c0392b,#007b6e); padding:14px 16px; color:#fff; }
+.csc-result-header { background:linear-gradient(120deg,#001a91,#007b6e); padding:14px 16px; color:#fff; }
 .csc-result-tipo { font-size:.65rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; opacity:.75; margin-bottom:2px; }
 .csc-result-parcela { font-size:1.8rem; font-weight:900; letter-spacing:-.03em; }
 .csc-result-parcela small { font-size:.85rem; font-weight:600; opacity:.75; margin-left:3px; }
@@ -190,7 +190,7 @@
 /* CONTRACT */
 .csc-contract { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-contract-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
-.csc-contract-ico { width:32px; height:32px; background:linear-gradient(135deg,#c0392b,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
+.csc-contract-ico { width:32px; height:32px; background:linear-gradient(135deg,#001a91,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
 .csc-contract-ttl { font-weight:800; font-size:.85rem; color:#1a1a2e; }
 .csc-contract-id { font-size:.63rem; color:#aaa; }
 .csc-crow { display:flex; justify-content:space-between; padding:8px 16px; border-bottom:1px solid #f0f2f5; font-size:.78rem; }
