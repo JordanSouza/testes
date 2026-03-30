@@ -14,8 +14,7 @@
     const lk = document.createElement("link");
     lk.id = "csc-font";
     lk.rel = "stylesheet";
-    lk.href =
-      "https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap";
+    lk.href = "https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap";
     document.head.appendChild(lk);
   }
 
@@ -37,7 +36,6 @@
   min-height: 540px;
   position: relative;
 }
-/* HEADER */
 .csc-header {
   background: linear-gradient(130deg, #1440fe 0%, #0A2DC7 45%, #001a91 100%);
   padding: 18px 20px 16px;
@@ -66,7 +64,6 @@
   letter-spacing:.03em; text-transform:uppercase;
 }
 .csc-wpp-btn:hover { background:rgba(255,255,255,.25); }
-/* STEP BAR */
 .csc-steps {
   background:#f8f9fb; border-bottom:1px solid #eee;
   padding:8px 20px; display:flex; align-items:center; gap:8px; flex-shrink:0;
@@ -75,7 +72,6 @@
 .csc-step-dot.done  { background:#1440fe; }
 .csc-step-dot.active { background:#1440fe; width:22px; border-radius:4px; }
 .csc-step-label { margin-left:auto; font-size:.65rem; font-weight:700; color:#aaa; letter-spacing:.05em; text-transform:uppercase; }
-/* MESSAGES */
 .csc-msgs {
   flex:1; overflow-y:auto; padding:18px 16px 10px;
   display:flex; flex-direction:column; gap:10px;
@@ -83,12 +79,11 @@
 }
 .csc-msgs::-webkit-scrollbar { width:3px; }
 .csc-msgs::-webkit-scrollbar-thumb { background:#ddd; border-radius:2px; }
-/* BUBBLES */
 .csc-row { display:flex; align-items:flex-end; gap:8px; }
 .csc-row.usr { flex-direction:row-reverse; }
 .csc-ava {
   width:30px; height:30px; border-radius:50%; flex-shrink:0;
-  background:linear-gradient(135deg,#1440fe,#1440fe);
+  background:linear-gradient(135deg,#1440fe,#001a91);
   display:flex; align-items:center; justify-content:center; font-size:.8rem;
   box-shadow:0 2px 8px rgba(0,0,0,.12);
 }
@@ -104,13 +99,11 @@
 .csc-bub .g { color:#1440fe; }
 .csc-time { font-size:.58rem; color:#bbb; margin-top:2px; align-self:flex-end; }
 .csc-row.usr .csc-time { text-align:right; }
-/* TYPING */
 .csc-typing { display:flex; gap:4px; align-items:center; padding:8px 2px; }
 .csc-tdot { width:7px; height:7px; border-radius:50%; background:#ccc; animation:csc-td .8s infinite ease-in-out; }
 .csc-tdot:nth-child(2) { animation-delay:.14s; }
 .csc-tdot:nth-child(3) { animation-delay:.28s; }
 @keyframes csc-td { 0%,60%,100%{transform:translateY(0);background:#ccc} 30%{transform:translateY(-5px);background:#1440fe} }
-/* CARDS */
 .csc-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:4px 14px 0; animation:csc-in .25s ease; }
 .csc-card {
   background:#fff; border:2px solid #eee; border-radius:16px;
@@ -118,10 +111,10 @@
   transition:border-color .18s, transform .15s, box-shadow .18s;
   display:flex; flex-direction:column; align-items:center; gap:6px;
 }
-.csc-card:hover { border-color:#1440fe; transform:translateY(-2px); box-shadow:0 6px 24px rgba(192,57,43,.15); }
+.csc-card:hover { border-color:#1440fe; transform:translateY(-2px); box-shadow:0 6px 24px rgba(20,64,254,.15); }
 .csc-card-ico {
   width:60px; height:60px; border-radius:50%;
-  background:linear-gradient(135deg,rgba(192,57,43,.1),rgba(0,123,110,.1));
+  background:linear-gradient(135deg,rgba(20,64,254,.1),rgba(0,26,145,.1));
   display:flex; align-items:center; justify-content:center; font-size:1.7rem;
 }
 .csc-card-lbl { font-weight:800; font-size:.85rem; color:#1a1a2e; }
@@ -134,7 +127,6 @@
   transition:background .15s, color .15s;
 }
 .csc-card:hover .csc-card-plus { background:#1440fe; color:#fff; }
-/* SLIDER */
 .csc-slider-wrap {
   background:#fff; border-radius:16px; padding:18px 16px;
   box-shadow:0 2px 12px rgba(0,0,0,.07); margin:4px 14px 0; animation:csc-in .25s ease;
@@ -147,30 +139,35 @@
   border:none; cursor:pointer; background:transparent; color:#888;
   transition:all .15s; font-family:'Nunito',sans-serif;
 }
-.csc-mode-btn.on { background:#1a1a2e; color:#fff; }
+.csc-mode-btn.on { background:#1440fe; color:#fff; }
 .csc-val-display { font-size:2rem; font-weight:900; color:#1a1a2e; text-align:center; margin:8px 0; letter-spacing:-.03em; }
 .csc-val-display span.prefix { font-size:1rem; font-weight:600; color:#888; margin-right:4px; }
 .csc-range {
   width:100%; height:5px; -webkit-appearance:none; appearance:none;
   border-radius:10px; outline:none; cursor:pointer;
-  background:linear-gradient(90deg,#001a91 var(--pct,10%),#e0e0e0 var(--pct,10%));
+  background:linear-gradient(90deg,#1440fe var(--pct,10%),#e0e0e0 var(--pct,10%));
 }
 .csc-range::-webkit-slider-thumb {
   -webkit-appearance:none; width:20px; height:20px; border-radius:50%;
-  background:#001a91; cursor:pointer; border:3px solid #fff;
-  box-shadow:0 2px 8px rgba(192,57,43,.4);
+  background:#1440fe; cursor:pointer; border:3px solid #fff;
+  box-shadow:0 2px 8px rgba(20,64,254,.4);
 }
 .csc-range-labels { display:flex; justify-content:space-between; font-size:.67rem; color:#bbb; margin-top:6px; font-weight:600; }
-/* PRAZO PILLS */
+.csc-slider-preview {
+  margin-top:10px; padding:8px 12px; border-radius:10px;
+  background:rgba(20,64,254,.05); border:1px solid rgba(20,64,254,.12);
+  font-size:.75rem; color:#555; text-align:center;
+  display:flex; align-items:center; justify-content:center; gap:4px; min-height:34px;
+}
+.csc-slider-preview b { color:#1440fe; font-weight:800; }
 .csc-pills { display:flex; flex-wrap:wrap; gap:7px; margin:4px 14px 0; animation:csc-in .25s ease; }
 .csc-pill {
   padding:8px 16px; border-radius:22px; border:2px solid #eee;
   font-size:.8rem; font-weight:700; cursor:pointer; background:#fff;
   transition:all .15s; color:#555; font-family:'Nunito',sans-serif;
 }
-.csc-pill:hover { border-color:#001a91; color:#001a91; }
-.csc-pill.on { background:#001a91; border-color:#001a91; color:#fff; }
-/* RESULT CARD */
+.csc-pill:hover { border-color:#1440fe; color:#1440fe; }
+.csc-pill.on { background:#1440fe; border-color:#1440fe; color:#fff; }
 .csc-result {
   background:#fff; border-radius:16px; overflow:hidden;
   box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; animation:csc-in .25s ease;
@@ -186,8 +183,7 @@
 .csc-ritem-v { font-size:.88rem; font-weight:800; color:#1a1a2e; }
 .csc-ritem-v.g { color:#1440fe; }
 .csc-badge-row { padding:10px 14px; }
-.csc-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(0,123,110,.08); border:1px solid rgba(0,123,110,.2); border-radius:20px; padding:4px 10px; font-size:.7rem; font-weight:700; color:#1440fe; }
-/* CONTRACT */
+.csc-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(20,64,254,.08); border:1px solid rgba(20,64,254,.2); border-radius:20px; padding:4px 10px; font-size:.7rem; font-weight:700; color:#1440fe; }
 .csc-contract { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-contract-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
 .csc-contract-ico { width:32px; height:32px; background:linear-gradient(135deg,#001a91,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
@@ -201,25 +197,22 @@
   margin:12px 16px 14px; width:calc(100% - 32px); padding:12px; border-radius:12px;
   background:linear-gradient(135deg,#001a91,#1440fe); color:#fff;
   border:none; font-weight:800; font-size:.88rem; cursor:pointer;
-  font-family:'Nunito',sans-serif; display:block; text-align:center;
-  transition:opacity .15s;
+  font-family:'Nunito',sans-serif; display:block; text-align:center; transition:opacity .15s;
 }
 .csc-sign-btn:hover { opacity:.9; }
-.csc-signed-ok { display:none; margin:0 16px 14px; padding:10px; border-radius:10px; background:#e8f8f4; color:#1440fe; font-weight:700; font-size:.8rem; text-align:center; }
-/* PAYMENT OPTIONS */
+.csc-signed-ok { display:none; margin:0 16px 14px; padding:10px; border-radius:10px; background:#eef1ff; color:#1440fe; font-weight:700; font-size:.8rem; text-align:center; }
 .csc-pay-btns { display:grid; grid-template-columns:1fr; gap:8px; margin:4px 14px 10px; animation:csc-in .25s ease; }
 .csc-pay-opt {
   background:#fff; border:2px solid #eee; border-radius:14px;
   padding:14px 16px; cursor:pointer; display:flex; align-items:center; gap:12px;
   transition:all .15s;
 }
-.csc-pay-opt:hover { border-color:#001a91; box-shadow:0 4px 14px rgba(192,57,43,.12); }
+.csc-pay-opt:hover { border-color:#1440fe; box-shadow:0 4px 14px rgba(20,64,254,.12); }
 .csc-pay-ico { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
 .csc-pay-info { flex:1; }
 .csc-pay-name { font-weight:800; font-size:.88rem; color:#1a1a2e; }
 .csc-pay-desc { font-size:.7rem; color:#888; margin-top:1px; }
 .csc-pay-arrow { color:#ccc; font-size:1rem; }
-/* PIX */
 .csc-pix { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); padding:18px; text-align:center; margin:4px 14px 0; animation:csc-in .25s ease; }
 .csc-pix-title { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#aaa; margin-bottom:12px; }
 .csc-qr { width:130px; height:130px; margin:0 auto 12px; background:#fff; border:3px solid #f0f2f5; border-radius:10px; padding:8px; display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
@@ -227,11 +220,10 @@
 .csc-pix-val { font-size:1.6rem; font-weight:900; color:#1a1a2e; margin-bottom:4px; }
 .csc-pix-sub { font-size:.72rem; color:#888; margin-bottom:12px; }
 .csc-pix-key { background:#f8f9fb; border:1px solid #eee; border-radius:8px; padding:8px 12px; font-size:.72rem; color:#555; margin-bottom:10px; word-break:break-all; text-align:left; }
-.csc-copy { width:100%; padding:10px; border-radius:10px; background:#e8f8f4; border:1px solid rgba(0,123,110,.25); color:#1440fe; font-weight:800; font-size:.82rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:background .15s; }
-.csc-copy:hover { background:#d0f4ec; }
+.csc-copy { width:100%; padding:10px; border-radius:10px; background:#eef1ff; border:1px solid rgba(20,64,254,.25); color:#1440fe; font-weight:800; font-size:.82rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:background .15s; }
+.csc-copy:hover { background:#dde5ff; }
 .csc-confirm-btn { width:100%; padding:11px; border-radius:10px; background:linear-gradient(135deg,#001a91,#1440fe); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
 .csc-confirm-btn:hover { opacity:.9; }
-/* BOLETO */
 .csc-boleto { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); padding:18px; margin:4px 14px 0; animation:csc-in .25s ease; }
 .csc-barcode { height:56px; background:#fff; border:1px solid #eee; border-radius:8px; padding:6px 10px; display:flex; align-items:center; gap:1px; overflow:hidden; margin:12px 0; }
 .csc-bar { background:#1a1a2e; border-radius:1px; flex-shrink:0; }
@@ -240,31 +232,28 @@
 .csc-boleto-item-v { font-size:.88rem; font-weight:800; color:#1a1a2e; margin-top:2px; }
 .csc-boleto-num { font-size:.65rem; color:#aaa; text-align:center; margin-bottom:12px; }
 .csc-copy-bol { width:100%; padding:10px; border-radius:10px; border:2px solid #eee; background:#fff; color:#555; font-weight:700; font-size:.8rem; cursor:pointer; font-family:'Nunito',sans-serif; margin-bottom:8px; transition:all .15s; }
-.csc-copy-bol:hover { border-color:#001a91; color:#001a91; }
-/* CARD FORM */
+.csc-copy-bol:hover { border-color:#1440fe; color:#1440fe; }
 .csc-cardform { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); padding:18px; margin:4px 14px 0; animation:csc-in .25s ease; }
 .csc-finput { width:100%; border:2px solid #eee; border-radius:10px; padding:10px 14px; font-size:.85rem; font-family:'Nunito',sans-serif; color:#1a1a2e; outline:none; transition:border-color .15s; margin-bottom:8px; background:#fff; }
-.csc-finput:focus { border-color:#001a91; }
+.csc-finput:focus { border-color:#1440fe; }
 .csc-finput::placeholder { color:#bbb; }
 .csc-finput-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 .csc-pay-card-btn { width:100%; padding:12px; border-radius:10px; margin-top:4px; background:linear-gradient(135deg,#001a91,#1440fe); color:#fff; border:none; font-weight:800; font-size:.9rem; cursor:pointer; font-family:'Nunito',sans-serif; transition:opacity .15s; }
 .csc-pay-card-btn:hover { opacity:.9; }
-/* SUCCESS */
 .csc-success { text-align:center; padding:8px 4px; animation:csc-in .25s ease; margin:4px 14px 0; }
 .csc-success-ani { font-size:2.6rem; animation:csc-pop .5s cubic-bezier(.34,1.56,.64,1); margin-bottom:8px; }
 @keyframes csc-pop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
 .csc-success-ttl { font-weight:900; font-size:1.05rem; color:#1440fe; margin-bottom:6px; }
 .csc-success-id { font-size:.72rem; background:#f0f2f5; border-radius:6px; padding:4px 10px; display:inline-block; margin:8px 0; color:#555; }
 .csc-success-txt { font-size:.8rem; color:#666; line-height:1.6; }
-/* CONTROLS */
 .csc-replies { display:none; flex-wrap:wrap; gap:7px; padding:10px 14px 12px; background:#fff; border-top:1px solid #f0f2f5; flex-shrink:0; }
 .csc-reply {
-  padding:8px 16px; border-radius:22px; border:2px solid rgba(192,57,43,.25);
+  padding:8px 16px; border-radius:22px; border:2px solid rgba(20,64,254,.25);
   font-size:.8rem; font-weight:700; cursor:pointer;
-  color:#001a91; background:rgba(192,57,43,.04);
+  color:#1440fe; background:rgba(20,64,254,.04);
   transition:all .15s; font-family:'Nunito',sans-serif;
 }
-.csc-reply:hover { background:#001a91; color:#fff; border-color:#001a91; }
+.csc-reply:hover { background:#1440fe; color:#fff; border-color:#1440fe; }
 .csc-reply.wide { flex:1; text-align:center; }
 .csc-reply.sec { color:#888; border-color:#ddd; background:#fff; }
 .csc-reply.sec:hover { background:#f0f2f5; color:#555; border-color:#ccc; }
@@ -272,9 +261,9 @@
 .csc-inp-wrap { display:none; align-items:center; gap:8px; }
 .csc-inp-wrap.on { display:flex; }
 .csc-text-inp { flex:1; border:2px solid #eee; border-radius:24px; padding:10px 16px; font-size:.85rem; font-family:'Nunito',sans-serif; outline:none; transition:border-color .15s; background:#f8f9fb; color:#1a1a2e; }
-.csc-text-inp:focus { border-color:#001a91; background:#fff; }
+.csc-text-inp:focus { border-color:#1440fe; background:#fff; }
 .csc-text-inp::placeholder { color:#bbb; }
-.csc-send { width:40px; height:40px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,#001a91,#1440fe); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#fff; box-shadow:0 4px 12px rgba(192,57,43,.35); transition:transform .12s; }
+.csc-send { width:40px; height:40px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,#001a91,#1440fe); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#fff; box-shadow:0 4px 12px rgba(20,64,254,.35); transition:transform .12s; }
 .csc-send:hover { transform:scale(1.08); }
     `;
     document.head.appendChild(style);
@@ -285,7 +274,7 @@
     <div class="csc-header">
       <div class="csc-logo">
         <div class="csc-logo-ico">AC</div>
-        <div class="csc-logo-txt">Autopilot Consórcios<span>Simulador Digital</span></div>
+        <div class="csc-logo-txt">Autopilot Consórcios<span>Consultor Digital</span></div>
       </div>
       <a class="csc-wpp-btn" href="https://wa.me/5500000000000" target="_blank">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.122 1.527 5.855L.057 23.998l6.305-1.655A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.497-5.18-1.367l-.371-.22-3.844 1.008 1.027-3.741-.241-.385A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -309,16 +298,29 @@
     </div>
   </div>`;
 
-  /* ─── CONFIG ─── */
+  /* ─── CONFIG PRODUTOS ─── */
   const PROD = {
-    imovel:  { emoji:"🏠", label:"Imóveis",  sub:"Casa, apê, terreno",      min:100000, max:800000, step:10000, fmtMin:"R$ 100 mil", fmtMax:"R$ 800 mil",  prazo:[60,100,120,180,200,240], adminRate:0.20 },
-    veiculo: { emoji:"🚗", label:"Veículos", sub:"Carro, moto, caminhão",   min:30000,  max:350000, step:5000,  fmtMin:"R$ 30 mil",  fmtMax:"R$ 350 mil", prazo:[36,48,60,72,84],         adminRate:0.18 }
+    imovel:  { emoji:"🏠", label:"Imóveis",  sub:"Casa, apê, terreno",    prazo:[60,100,120,180,200,240], adminRate:0.20 },
+    veiculo: { emoji:"🚗", label:"Veículos", sub:"Carro, moto, caminhão", prazo:[36,48,60,72,84],         adminRate:0.18 }
   };
-  const STEPS = ["welcome","tipo","valor","prazo","sim","confirm","nome","tel","email","contrato","pagamento","pix","cartao","boleto","fim"];
-  const LABELS = { welcome:"Início", tipo:"Tipo", valor:"Valor", prazo:"Prazo", sim:"Simulação", confirm:"Confirmação", nome:"Cadastro", tel:"Cadastro", email:"Cadastro", contrato:"Contrato", pagamento:"Pagamento", pix:"PIX", cartao:"Cartão", boleto:"Boleto", fim:"Concluído" };
+
+  /* ─── CONFIG SLIDER por tipo e modo ─── */
+  const SLIDER = {
+    imovel: {
+      carta:   { min:100000, max:800000, step:10000, fmtMin:"R$ 100 mil", fmtMax:"R$ 800 mil", label:"Valor da Carta de Crédito" },
+      parcela: { min:500,    max:5000,   step:50,    fmtMin:"R$ 500",     fmtMax:"R$ 5.000",   label:"Valor da Parcela Mensal" }
+    },
+    veiculo: {
+      carta:   { min:30000,  max:350000, step:5000,  fmtMin:"R$ 30 mil",  fmtMax:"R$ 350 mil", label:"Valor da Carta de Crédito" },
+      parcela: { min:200,    max:3000,   step:50,    fmtMin:"R$ 200",     fmtMax:"R$ 3.000",   label:"Valor da Parcela Mensal" }
+    }
+  };
+
+  const STEPS  = ["welcome","tipo","valor","prazo","sim","confirm","nome","tel","email","contrato","pagamento","pix","cartao","boleto","fim"];
+  const LABELS = { welcome:"Início",tipo:"Tipo",valor:"Valor",prazo:"Prazo",sim:"Simulação",confirm:"Confirmação",nome:"Cadastro",tel:"Cadastro",email:"Cadastro",contrato:"Contrato",pagamento:"Pagamento",pix:"PIX",cartao:"Cartão",boleto:"Boleto",fim:"Concluído" };
 
   /* ─── STATE ─── */
-  const S = { tipo:null, valor:0, prazo:0, nome:"", tel:"", email:"", contractId:null, simData:null };
+  const S = { tipo:null, valor:0, parcela:0, mode:"carta", prazo:0, nome:"", tel:"", email:"", contractId:null, simData:null };
 
   /* ─── HELPERS ─── */
   const fmt  = v => "R$ " + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -326,6 +328,26 @@
   const sl   = ms => new Promise(r => setTimeout(r, ms));
   const $    = id => document.getElementById(id);
   const msgs = () => $("csc-msgs");
+
+  // fator total aplicado sobre a carta (adm + reserva + seguro)
+  function fator(tipo) {
+    return tipo === "veiculo"
+      ? (1 + PROD[tipo].adminRate + 0.02 + 0.008)
+      : (1 + PROD[tipo].adminRate + 0.02 + 0.005);
+  }
+  // parcela → carta estimada para um prazo
+  function parcelaToCarta(tipo, parcela, prazo) {
+    return Math.round((parcela * prazo) / fator(tipo));
+  }
+  // carta → parcela estimada para um prazo
+  function cartaToParcela(tipo, carta, prazo) {
+    return Math.round((carta * fator(tipo)) / prazo);
+  }
+  // prazo de referência para o preview (usa prazo selecionado ou o meio da lista)
+  function prazoRef(tipo) {
+    const list = PROD[tipo].prazo;
+    return S.prazo || list[Math.floor(list.length / 2)];
+  }
 
   function setProgress(name) {
     const i = STEPS.indexOf(name);
@@ -335,8 +357,7 @@
       if (idx < p) d.classList.add("done");
       else if (idx === p) d.classList.add("active");
     });
-    const lbl = $("csc-step-lbl");
-    if (lbl) lbl.textContent = LABELS[name] || "";
+    const lbl = $("csc-step-lbl"); if (lbl) lbl.textContent = LABELS[name] || "";
   }
 
   function scrollEnd() { const m=msgs(); if(m) m.scrollTop=m.scrollHeight; }
@@ -348,22 +369,18 @@
         const row = document.createElement("div");
         row.className = "csc-row bot";
         row.innerHTML = `<div class="csc-ava">🏦</div><div style="display:flex;flex-direction:column;gap:3px;max-width:78%"><div class="csc-bub">${html}</div><span class="csc-time">${now()}</span></div>`;
-        msgs().appendChild(row);
-        scrollEnd(); res();
+        msgs().appendChild(row); scrollEnd(); res();
       }, delay || 0);
     });
   }
-
   function addUsr(text) {
     return new Promise(res => {
       const row = document.createElement("div");
       row.className = "csc-row usr";
       row.innerHTML = `<div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;max-width:78%"><div class="csc-bub">${text}</div><span class="csc-time">${now()}</span></div>`;
-      msgs().appendChild(row);
-      scrollEnd(); res();
+      msgs().appendChild(row); scrollEnd(); res();
     });
   }
-
   async function typing(ms) {
     const row = document.createElement("div");
     row.className = "csc-row bot"; row.id = "csc-typing";
@@ -386,7 +403,6 @@
       el.appendChild(btn);
     });
   }
-
   function showInput(ph, cb) {
     $("csc-replies").style.display = "none";
     $("csc-bottom").style.display = "block";
@@ -399,10 +415,12 @@
     s.onclick = fire;
     i.onkeydown = e => { if (e.key === "Enter") fire(); };
   }
-
-  function hideControls() {
-    $("csc-replies").style.display = "none";
-    $("csc-bottom").style.display = "none";
+  function hideControls() { $("csc-replies").style.display = "none"; $("csc-bottom").style.display = "none"; }
+  function inject(html) {
+    const w = document.createElement("div");
+    w.style.cssText = "margin:4px 0 0;animation:csc-in .25s ease;";
+    w.innerHTML = html;
+    msgs().appendChild(w); scrollEnd(); return w;
   }
 
   /* ─── CALC ─── */
@@ -417,41 +435,99 @@
     return { parcela, total, adm, res, seg, contemp, taxaAdm: (p.adminRate * 100).toFixed(0) };
   }
 
-  /* ─── HTML BUILDERS ─── */
+  /* ─── SLIDER ─── */
   function sliderHTML() {
-    const p = PROD[S.tipo];
-    const val = S.valor || p.min;
-    const pct = Math.round(((val - p.min) / (p.max - p.min)) * 100);
+    const modo = S.mode;
+    const cfg  = SLIDER[S.tipo][modo];
+    const val  = modo === "carta" ? (S.valor || cfg.min) : (S.parcela || cfg.min);
+    const pct  = Math.round(((val - cfg.min) / (cfg.max - cfg.min)) * 100);
+    const numFmt = val.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+    const pr = prazoRef(S.tipo);
+    const preview = modo === "parcela"
+      ? `≈ Carta estimada: <b>${fmt(parcelaToCarta(S.tipo, val, pr))}</b> em ${pr} meses`
+      : `≈ Parcela estimada: <b>${fmt(cartaToParcela(S.tipo, val, pr))}/mês</b> em ${pr} meses`;
+
     return `<div class="csc-slider-wrap" id="csc-slid">
       <div class="csc-slider-top">
         <span class="csc-slider-lbl">Simular por</span>
         <div class="csc-slider-mode">
-          <button class="csc-mode-btn on" id="csc-mc">Carta</button>
-          <button class="csc-mode-btn" id="csc-mp">Parcela</button>
+          <button class="csc-mode-btn ${modo==="carta"?"on":""}" id="csc-mc">Carta</button>
+          <button class="csc-mode-btn ${modo==="parcela"?"on":""}" id="csc-mp">Parcela</button>
         </div>
       </div>
-      <div class="csc-slider-lbl">Escolha o valor:</div>
-      <div class="csc-val-display"><span class="prefix">R$</span><span id="csc-vnum">${val.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})}</span></div>
-      <input type="range" class="csc-range" id="csc-range" min="${p.min}" max="${p.max}" step="${p.step}" value="${val}" style="--pct:${pct}%">
-      <div class="csc-range-labels"><span>${p.fmtMin}</span><span>${p.fmtMax}</span></div>
+      <div class="csc-slider-lbl" id="csc-slid-lbl">${cfg.label}:</div>
+      <div class="csc-val-display"><span class="prefix">R$</span><span id="csc-vnum">${numFmt}</span></div>
+      <input type="range" class="csc-range" id="csc-range"
+        min="${cfg.min}" max="${cfg.max}" step="${cfg.step}" value="${val}" style="--pct:${pct}%">
+      <div class="csc-range-labels"><span id="csc-rmin">${cfg.fmtMin}</span><span id="csc-rmax">${cfg.fmtMax}</span></div>
+      <div class="csc-slider-preview" id="csc-preview">${preview}</div>
     </div>`;
   }
 
   function attachSlider() {
     const r = $("csc-range"), n = $("csc-vnum");
     if (!r) return;
+
+    function refreshPreview(val) {
+      const prev = $("csc-preview"); if (!prev) return;
+      const pr = prazoRef(S.tipo);
+      if (S.mode === "parcela") {
+        const ce = parcelaToCarta(S.tipo, val, pr);
+        S.valor = ce;
+        prev.innerHTML = `≈ Carta estimada: <b>${fmt(ce)}</b> em ${pr} meses`;
+      } else {
+        const pe = cartaToParcela(S.tipo, val, pr);
+        prev.innerHTML = `≈ Parcela estimada: <b>${fmt(pe)}/mês</b> em ${pr} meses`;
+      }
+    }
+
     r.addEventListener("input", () => {
-      const p = PROD[S.tipo];
-      const pct = Math.round((r.value - p.min) / (p.max - p.min) * 100);
+      const cfg = SLIDER[S.tipo][S.mode];
+      const val = parseInt(r.value);
+      const pct = Math.round((val - cfg.min) / (cfg.max - cfg.min) * 100);
       r.style.setProperty("--pct", pct + "%");
-      S.valor = parseInt(r.value);
-      n.textContent = S.valor.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+      n.textContent = val.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+      if (S.mode === "carta") S.valor = val; else S.parcela = val;
+      refreshPreview(val);
     });
-    const mc = $("csc-mc"), mp = $("csc-mp");
-    mc.onclick = () => { mc.classList.add("on"); mp.classList.remove("on"); };
-    mp.onclick = () => { mp.classList.add("on"); mc.classList.remove("on"); };
+
+    function switchMode(novo) {
+      S.mode = novo;
+      const cfg = SLIDER[S.tipo][novo];
+      const mc = $("csc-mc"), mp = $("csc-mp");
+      mc.classList.toggle("on", novo === "carta");
+      mp.classList.toggle("on", novo === "parcela");
+      const lbl = $("csc-slid-lbl");
+      if (lbl) lbl.textContent = cfg.label + ":";
+      const rmin = $("csc-rmin"), rmax = $("csc-rmax");
+      if (rmin) rmin.textContent = cfg.fmtMin;
+      if (rmax) rmax.textContent = cfg.fmtMax;
+
+      // converte valor atual para o novo modo usando prazo de referência
+      const pr = prazoRef(S.tipo);
+      let newVal;
+      if (novo === "parcela") {
+        const pe = cartaToParcela(S.tipo, S.valor || SLIDER[S.tipo].carta.min, pr);
+        newVal = Math.max(cfg.min, Math.min(cfg.max, Math.round(pe / cfg.step) * cfg.step));
+        S.parcela = newVal;
+      } else {
+        const ce = parcelaToCarta(S.tipo, S.parcela || SLIDER[S.tipo].parcela.min, pr);
+        newVal = Math.max(cfg.min, Math.min(cfg.max, Math.round(ce / cfg.step) * cfg.step));
+        S.valor = newVal;
+      }
+
+      r.min = cfg.min; r.max = cfg.max; r.step = cfg.step; r.value = newVal;
+      const pct = Math.round((newVal - cfg.min) / (cfg.max - cfg.min) * 100);
+      r.style.setProperty("--pct", pct + "%");
+      n.textContent = newVal.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+      refreshPreview(newVal);
+    }
+
+    $("csc-mc").onclick = () => switchMode("carta");
+    $("csc-mp").onclick = () => switchMode("parcela");
   }
 
+  /* ─── HTML BUILDERS ─── */
   function resultHTML() {
     const d = S.simData, p = PROD[S.tipo];
     return `<div class="csc-result">
@@ -471,7 +547,7 @@
   }
 
   function contractHTML() {
-    const id = "CPL-" + Date.now().toString(36).toUpperCase().slice(-6);
+    const id = "APC-" + Date.now().toString(36).toUpperCase().slice(-6);
     S.contractId = id;
     const d = S.simData;
     return `<div class="csc-contract">
@@ -513,7 +589,7 @@
       bars += `<div class="csc-bar" style="width:${w}px;height:${i%5===0?"100%":"80%"}"></div>`;
     });
     const venc = new Date(Date.now() + 3 * 86400000).toLocaleDateString("pt-BR");
-    const cod = "34191.09008 09182.726309 " + Math.round(S.simData.parcela * 100).toString().padStart(14,"0");
+    const cod  = "34191.09008 09182.726309 " + Math.round(S.simData.parcela * 100).toString().padStart(14,"0");
     return `<div class="csc-boleto">
       <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#aaa;margin-bottom:10px;">🧾 Boleto Bancário</div>
       <div class="csc-boleto-info">
@@ -542,25 +618,15 @@
     </div>`;
   }
 
-  /* ─── HELPERS: inject rich node ─── */
-  function inject(html) {
-    const w = document.createElement("div");
-    w.style.cssText = "margin:4px 0 0;animation:csc-in .25s ease;";
-    w.innerHTML = html;
-    msgs().appendChild(w);
-    scrollEnd();
-    return w;
-  }
-
   /* ════ FLOW ════ */
 
   async function welcome() {
     setProgress("welcome"); hideControls();
     await sl(300);
-    await addBot("Olá! 👋 Bem-vindo ao <b>Simulador Autopilot Consórcios</b>.<br>Vou te ajudar a encontrar o plano ideal em poucos cliques.");
+    await addBot("Olá! 👋 Bem-vindo ao <b>Autopilot Consórcios</b>.<br>Vou te ajudar a encontrar o plano ideal em poucos cliques.");
     await typing(700);
     await addBot("O que você pretende <b>fazer ou conquistar</b>?");
-    const wrap = inject(`<div class="csc-cards">
+    inject(`<div class="csc-cards">
       <div class="csc-card" id="cc-imovel">
         <div class="csc-card-ico">🏠</div>
         <div class="csc-card-lbl">Imóveis</div>
@@ -576,7 +642,6 @@
     </div>`);
     $("cc-imovel").onclick  = () => pickTipo("imovel");
     $("cc-veiculo").onclick = () => pickTipo("veiculo");
-    // free text fallback
     $("csc-bottom").style.display = "block";
     $("csc-inp-wrap").classList.add("on");
     const i = $("csc-inp"), s = $("csc-send");
@@ -592,27 +657,42 @@
   }
 
   async function pickTipo(t) {
-    S.tipo = t; setProgress("tipo"); hideControls();
+    S.tipo = t; S.mode = "carta";
+    S.valor = SLIDER[t].carta.min;
+    S.parcela = SLIDER[t].parcela.min;
+    setProgress("tipo"); hideControls();
     document.querySelectorAll(".csc-cards").forEach(el => el.parentElement?.remove());
     await addUsr(PROD[t].emoji + " " + PROD[t].label);
     await typing(800);
-    await addBot("Ótimo! 💼 Qual o <b>valor da carta de crédito</b> que você precisa?");
+    await addBot("Ótimo! 💼 Qual o <b>valor</b> que você quer simular?");
     inject(sliderHTML());
-    S.valor = PROD[t].min;
     attachSlider();
     setReplies([{ label:"Continuar →", wide:true, cb:() => goValor() }]);
   }
 
   async function goValor() {
-    if (!S.valor) S.valor = PROD[S.tipo].min;
+    // garante S.valor preenchido independente do modo
+    if (S.mode === "parcela") {
+      S.valor = parcelaToCarta(S.tipo, S.parcela || SLIDER[S.tipo].parcela.min, prazoRef(S.tipo));
+    }
+    if (!S.valor) S.valor = SLIDER[S.tipo].carta.min;
+
     setProgress("valor"); hideControls();
     document.querySelector(".csc-slider-wrap")?.parentElement?.remove();
-    await addUsr(fmt(S.valor));
+
+    const label = S.mode === "parcela"
+      ? `Parcela de ${fmt(S.parcela)}/mês → Carta ~${fmt(S.valor)}`
+      : fmt(S.valor);
+    await addUsr(label);
     await typing(700);
     await addBot("Em <b>quantas parcelas</b> você quer pagar?");
     const wrap = inject(`<div class="csc-pills">${PROD[S.tipo].prazo.map(p => `<button class="csc-pill" data-p="${p}">${p}x</button>`).join("")}</div>`);
     wrap.querySelectorAll(".csc-pill").forEach(btn => {
-      btn.onclick = () => { wrap.querySelectorAll(".csc-pill").forEach(x => x.classList.remove("on")); btn.classList.add("on"); S.prazo = parseInt(btn.dataset.p); };
+      btn.onclick = () => {
+        wrap.querySelectorAll(".csc-pill").forEach(x => x.classList.remove("on"));
+        btn.classList.add("on");
+        S.prazo = parseInt(btn.dataset.p);
+      };
     });
     setReplies([{ label:"Ver simulação →", wide:true, cb:() => { if (!S.prazo) return; goPrazo(); } }]);
   }
@@ -676,10 +756,10 @@
 
   async function goPagamento() {
     setProgress("pagamento");
-    const wrap = inject(`<div class="csc-pay-btns">
-      <div class="csc-pay-opt" id="csc-p-pix"><div class="csc-pay-ico" style="background:rgba(0,123,110,.1)">⚡</div><div class="csc-pay-info"><div class="csc-pay-name">PIX</div><div class="csc-pay-desc">Confirmação imediata</div></div><span class="csc-pay-arrow">›</span></div>
-      <div class="csc-pay-opt" id="csc-p-card"><div class="csc-pay-ico" style="background:rgba(192,57,43,.1)">💳</div><div class="csc-pay-info"><div class="csc-pay-name">Cartão de Crédito</div><div class="csc-pay-desc">Visa, Master, Elo</div></div><span class="csc-pay-arrow">›</span></div>
-      <div class="csc-pay-opt" id="csc-p-bol"><div class="csc-pay-ico" style="background:rgba(26,26,46,.08)">🧾</div><div class="csc-pay-info"><div class="csc-pay-name">Boleto Bancário</div><div class="csc-pay-desc">Vence em 3 dias úteis</div></div><span class="csc-pay-arrow">›</span></div>
+    inject(`<div class="csc-pay-btns">
+      <div class="csc-pay-opt" id="csc-p-pix"><div class="csc-pay-ico" style="background:rgba(20,64,254,.08)">⚡</div><div class="csc-pay-info"><div class="csc-pay-name">PIX</div><div class="csc-pay-desc">Confirmação imediata</div></div><span class="csc-pay-arrow">›</span></div>
+      <div class="csc-pay-opt" id="csc-p-card"><div class="csc-pay-ico" style="background:rgba(20,64,254,.08)">💳</div><div class="csc-pay-info"><div class="csc-pay-name">Cartão de Crédito</div><div class="csc-pay-desc">Visa, Master, Elo</div></div><span class="csc-pay-arrow">›</span></div>
+      <div class="csc-pay-opt" id="csc-p-bol"><div class="csc-pay-ico" style="background:rgba(26,26,46,.06)">🧾</div><div class="csc-pay-info"><div class="csc-pay-name">Boleto Bancário</div><div class="csc-pay-desc">Vence em 3 dias úteis</div></div><span class="csc-pay-arrow">›</span></div>
     </div>`);
     hideControls();
     setTimeout(() => {
@@ -696,7 +776,7 @@
     inject(pixHTML());
     setTimeout(() => {
       const cp = $("csc-pix-copy"), ok = $("csc-pix-ok");
-      if (cp) cp.onclick = () => { cp.textContent = "✓ Chave copiada!"; cp.style.background = "#c8f0e8"; };
+      if (cp) cp.onclick = () => { cp.textContent = "✓ Chave copiada!"; cp.style.background = "#dde5ff"; };
       if (ok) ok.onclick = () => goFim();
     }, 200);
   }
@@ -739,7 +819,7 @@
     setTimeout(() => {
       setReplies([{ label:"🔄 Nova simulação", wide:true, cb:() => {
         msgs().innerHTML = "";
-        Object.assign(S, { tipo:null, valor:0, prazo:0, nome:"", tel:"", email:"", contractId:null, simData:null });
+        Object.assign(S, { tipo:null, valor:0, parcela:0, mode:"carta", prazo:0, nome:"", tel:"", email:"", contractId:null, simData:null });
         welcome();
       }}]);
     }, 1000);
