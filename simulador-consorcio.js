@@ -39,7 +39,7 @@
 }
 /* HEADER */
 .csc-header {
-  background: linear-gradient(130deg, #c0392b 0%, #9b2226 45%, #007b6e 100%);
+  background: linear-gradient(130deg, #1440fe 0%, #0A2DC7 45%, #001a91 100%);
   padding: 18px 20px 16px;
   display: flex; align-items: center; justify-content: space-between;
   flex-shrink: 0; position: relative; overflow: hidden;
