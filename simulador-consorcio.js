@@ -363,7 +363,12 @@
     const lbl = $("csc-step-lbl"); if (lbl) lbl.textContent = LABELS[name] || "";
   }
 
-  function scrollEnd() { const m=msgs(); if(m) m.scrollTop=m.scrollHeight; }
+  function scrollEnd() { 
+    setTimeout(() => {
+      const m = msgs(); 
+      if(m) m.scrollTop = m.scrollHeight;
+    }, 150); // 150ms é o tempo perfeito para a animação do CSS revelar o tamanho real
+  }
 
   /* ─── MESSAGES ─── */
   function addBot(html, delay) {
