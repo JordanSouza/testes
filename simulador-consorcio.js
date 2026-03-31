@@ -23,11 +23,8 @@
     const style = document.createElement("style");
     style.id = "csc-styles";
     style.textContent = `
-/* Tira a margem padrão do navegador dentro do iframe */
 html, body { margin: 0; padding: 0; height: 100%; background: transparent; overflow: hidden; }
-
 #simulador-consorcio { width: 100%; height: 100%; }
-
 .csc-widget {
   font-family: 'Nunito', sans-serif;
   background: #fff;
@@ -35,7 +32,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Força o widget a esticar e ocupar 100% da altura do iframe */
+  height: 100%;
   position: relative;
 }
 .csc-header {
@@ -90,7 +87,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   box-shadow:0 2px 8px rgba(0,0,0,.12);
 }
 .csc-bub {
-  max-width: 100%; /* Mudamos para 100% para ele usar o espaço todo permitido pela caixa pai */
+  max-width: 100%;
   padding: 11px 14px; border-radius: 18px;
   font-size: .88rem; line-height: 1.55;
   animation: csc-in .2s ease; position: relative; word-wrap: break-word;
@@ -167,7 +164,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-pill {
   padding:8px 16px; border-radius:22px; border:2px solid #eee;
   font-size:.8rem; font-weight:700; cursor:pointer; background:#fff;
-  transition:all .15s; color:#555; font-family:'Nunito',sans-serif;white-space: nowrap;
+  transition:all .15s; color:#555; font-family:'Nunito',sans-serif; white-space:nowrap;
 }
 .csc-pill:hover { border-color:#1440fe; color:#1440fe; }
 .csc-pill.on { background:#1440fe; border-color:#1440fe; color:#fff; }
@@ -187,6 +184,29 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-ritem-v.g { color:#1440fe; }
 .csc-badge-row { padding:10px 14px; }
 .csc-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(20,64,254,.08); border:1px solid rgba(20,64,254,.2); border-radius:20px; padding:4px 10px; font-size:.7rem; font-weight:700; color:#1440fe; }
+
+/* ── Resumo de Cadastro ── */
+.csc-summary { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
+.csc-summary-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
+.csc-summary-ico { width:32px; height:32px; background:linear-gradient(135deg,#001a91,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
+.csc-summary-ttl { font-weight:800; font-size:.85rem; color:#1a1a2e; }
+.csc-srow { display:flex; justify-content:space-between; padding:8px 16px; border-bottom:1px solid #f0f2f5; font-size:.78rem; }
+.csc-srow:last-of-type { border:none; }
+.csc-srow-k { color:#888; }
+.csc-srow-v { font-weight:700; color:#1a1a2e; max-width:58%; text-align:right; word-break:break-word; }
+
+/* ── Seguro ── */
+.csc-seguro { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
+.csc-seguro-head { padding:14px 16px 10px; background:linear-gradient(120deg,#001a91,#1440fe); color:#fff; }
+.csc-seguro-ttl { font-weight:900; font-size:.95rem; margin-bottom:2px; }
+.csc-seguro-sub { font-size:.7rem; opacity:.75; }
+.csc-seguro-item { display:flex; align-items:flex-start; gap:8px; padding:9px 16px; border-bottom:1px solid #f0f2f5; font-size:.78rem; color:#444; }
+.csc-seguro-item:last-of-type { border:none; }
+.csc-seguro-item span { font-size:.95rem; flex-shrink:0; margin-top:1px; }
+.csc-seguro-price { padding:9px 16px; display:flex; justify-content:space-between; align-items:center; background:#f8f9fb; border-top:1px solid #eee; }
+.csc-seguro-price-lbl { font-size:.7rem; color:#888; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+.csc-seguro-price-val { font-size:1rem; font-weight:900; color:#1440fe; }
+
 .csc-contract { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-contract-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
 .csc-contract-ico { width:32px; height:32px; background:linear-gradient(135deg,#001a91,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
@@ -204,6 +224,18 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 }
 .csc-sign-btn:hover { opacity:.9; }
 .csc-signed-ok { display:none; margin:0 16px 14px; padding:10px; border-radius:10px; background:#eef1ff; color:#1440fe; font-weight:700; font-size:.8rem; text-align:center; }
+
+/* ── Contrato Emitido ── */
+.csc-emit { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
+.csc-emit-head { padding:14px 16px; background:linear-gradient(120deg,#001a91,#1440fe); color:#fff; }
+.csc-emit-ttl { font-weight:900; font-size:.95rem; margin-bottom:2px; }
+.csc-emit-sub { font-size:.7rem; opacity:.75; }
+.csc-emit-row { display:flex; justify-content:space-between; padding:8px 16px; border-bottom:1px solid #f0f2f5; font-size:.78rem; }
+.csc-emit-row:last-of-type { border:none; }
+.csc-emit-k { color:#888; }
+.csc-emit-v { font-weight:700; color:#1a1a2e; }
+.csc-emit-dl { margin:10px 16px 14px; display:block; text-align:center; padding:10px; border-radius:10px; background:rgba(20,64,254,.06); border:1px solid rgba(20,64,254,.2); color:#1440fe; font-weight:800; font-size:.82rem; cursor:pointer; text-decoration:none; font-family:'Nunito',sans-serif; }
+
 .csc-pay-btns { display:grid; grid-template-columns:1fr; gap:8px; margin:4px 14px 10px; animation:csc-in .25s ease; }
 .csc-pay-opt {
   background:#fff; border:2px solid #eee; border-radius:14px;
@@ -249,6 +281,14 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-success-ttl { font-weight:900; font-size:1.05rem; color:#1440fe; margin-bottom:6px; }
 .csc-success-id { font-size:.72rem; background:#f0f2f5; border-radius:6px; padding:4px 10px; display:inline-block; margin:8px 0; color:#555; }
 .csc-success-txt { font-size:.8rem; color:#666; line-height:1.6; }
+
+/* ── Encerramento ── */
+.csc-bye { text-align:center; padding:12px 4px 6px; animation:csc-in .25s ease; margin:4px 14px 0; }
+.csc-bye-ani { font-size:2.2rem; margin-bottom:8px; }
+.csc-bye-ttl { font-weight:900; font-size:1rem; color:#1a1a2e; margin-bottom:6px; }
+.csc-bye-txt { font-size:.8rem; color:#666; line-height:1.6; margin-bottom:12px; }
+.csc-bye-redirect { width:100%; padding:12px; border-radius:10px; background:linear-gradient(135deg,#001a91,#1440fe); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; }
+
 .csc-replies { display:none; flex-wrap:wrap; gap:7px; padding:10px 14px 12px; background:#fff; border-top:1px solid #f0f2f5; flex-shrink:0; }
 .csc-reply {
   padding:8px 16px; border-radius:22px; border:2px solid rgba(20,64,254,.25);
@@ -307,53 +347,44 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     veiculo: { emoji:"🚗", label:"Veículos", sub:"Carro, moto, caminhão", prazo:[36,48,60,72,84],         adminRate:0.18 }
   };
 
-  /* ─── CONFIG SLIDER por tipo e modo ─── */
- /* ─── CONFIG SLIDER por tipo e modo ─── */
-  const SLIDER = {
-    imovel: {
-      carta:   { min:100000, max:800000, step:10000, fmtMin:"R$ 100 mil", fmtMax:"R$ 800 mil", label:"Valor da Carta de Crédito" },
-      // Limite de parcela aumentado para 5500 para comportar a carta de 800k em 180x
-      parcela: { min:600,    max:5500,   step:50,    fmtMin:"R$ 600",     fmtMax:"R$ 5.500",   label:"Valor da Parcela Mensal" }
-    },
-    veiculo: {
-      carta:   { min:30000,  max:350000, step:5000,  fmtMin:"R$ 30 mil",  fmtMax:"R$ 350 mil", label:"Valor da Carta de Crédito" },
-      // Limite de parcela aumentado para 7500 para comportar a carta de 350k em 60x
-      parcela: { min:500,    max:7500,   step:50,    fmtMin:"R$ 500",     fmtMax:"R$ 7.500",   label:"Valor da Parcela Mensal" }
-    }
-  };
+  /* ─── CONFIG SLIDER ─── */
+  const SLIDER = {
+    imovel: {
+      carta:   { min:100000, max:800000, step:10000, fmtMin:"R$ 100 mil", fmtMax:"R$ 800 mil", label:"Valor da Carta de Crédito" },
+      parcela: { min:600,    max:5500,   step:50,    fmtMin:"R$ 600",     fmtMax:"R$ 5.500",   label:"Valor da Parcela Mensal" }
+    },
+    veiculo: {
+      carta:   { min:30000,  max:350000, step:5000,  fmtMin:"R$ 30 mil",  fmtMax:"R$ 350 mil", label:"Valor da Carta de Crédito" },
+      parcela: { min:500,    max:7500,   step:50,    fmtMin:"R$ 500",     fmtMax:"R$ 7.500",   label:"Valor da Parcela Mensal" }
+    }
+  };
 
-  const STEPS  = ["welcome","tipo","valor","prazo","sim","confirm","nome","tel","email","contrato","pagamento","pix","cartao","boleto","fim"];
-  const LABELS = { welcome:"Início",tipo:"Tipo",valor:"Valor",prazo:"Prazo",sim:"Simulação",confirm:"Confirmação",nome:"Cadastro",tel:"Cadastro",email:"Cadastro",contrato:"Contrato",pagamento:"Pagamento",pix:"PIX",cartao:"Cartão",boleto:"Boleto",fim:"Concluído" };
+  const STEPS  = ["welcome","tipo","valor","prazo","sim","confirm","nome","tel","cpf","nascimento","cep","rua","numero","complemento","cidade","estado","renda","resumo","seguro","pagamento","pix","cartao","boleto","contrato","fim","bye"];
+  const LABELS = { welcome:"Início",tipo:"Tipo",valor:"Valor",prazo:"Prazo",sim:"Simulação",confirm:"Confirmação",nome:"Cadastro",tel:"Cadastro",cpf:"Cadastro",nascimento:"Cadastro",cep:"Endereço",rua:"Endereço",numero:"Endereço",complemento:"Endereço",cidade:"Endereço",estado:"Endereço",renda:"Perfil",resumo:"Resumo",seguro:"Seguro",pagamento:"Pagamento",pix:"PIX",cartao:"Cartão",boleto:"Boleto",contrato:"Contrato",fim:"Concluído",bye:"Encerrado" };
 
   /* ─── STATE ─── */
-  const S = { tipo:null, valor:0, parcela:0, mode:"carta", prazo:0, nome:"", tel:"", email:"", contractId:null, simData:null };
+  const S = {
+    tipo:null, valor:0, parcela:0, mode:"carta", prazo:0,
+    nome:"", tel:"", cpf:"", nascimento:"", email:"",
+    cep:"", rua:"", numero:"", complemento:"", cidade:"", estado:"",
+    renda:"", seguro:false, contractId:null, simData:null
+  };
 
   /* ─── HELPERS ─── */
-  const fmt  = v => "R$\u00A0" + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+  const fmt  = v => "R$\u00A0" + v.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
   const now  = () => { const d=new Date(); return d.getHours().toString().padStart(2,"0")+":"+d.getMinutes().toString().padStart(2,"0"); };
   const sl   = ms => new Promise(r => setTimeout(r, ms));
   const $    = id => document.getElementById(id);
   const msgs = () => $("csc-msgs");
 
-  // fator total aplicado sobre a carta (adm + reserva + seguro)
   function fator(tipo) {
     return tipo === "veiculo"
       ? (1 + PROD[tipo].adminRate + 0.02 + 0.008)
       : (1 + PROD[tipo].adminRate + 0.02 + 0.005);
   }
-  // parcela → carta estimada para um prazo
-  function parcelaToCarta(tipo, parcela, prazo) {
-    return Math.round((parcela * prazo) / fator(tipo));
-  }
-  // carta → parcela estimada para um prazo
-  function cartaToParcela(tipo, carta, prazo) {
-    return Math.round((carta * fator(tipo)) / prazo);
-  }
-  // prazo de referência para o preview (usa prazo selecionado ou o meio da lista)
-  function prazoRef(tipo) {
-    const list = PROD[tipo].prazo;
-    return S.prazo || list[Math.floor(list.length / 2)];
-  }
+  function parcelaToCarta(tipo, parcela, prazo) { return Math.round((parcela * prazo) / fator(tipo)); }
+  function cartaToParcela(tipo, carta, prazo)   { return Math.round((carta * fator(tipo)) / prazo); }
+  function prazoRef(tipo) { const list = PROD[tipo].prazo; return S.prazo || list[Math.floor(list.length / 2)]; }
 
   function setProgress(name) {
     const i = STEPS.indexOf(name);
@@ -366,12 +397,9 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     const lbl = $("csc-step-lbl"); if (lbl) lbl.textContent = LABELS[name] || "";
   }
 
-  function scrollEnd() { 
-    setTimeout(() => {
-      const m = msgs(); 
-      if(m) m.scrollTop = m.scrollHeight;
-    }, 150); // 150ms é o tempo perfeito para a animação do CSS revelar o tamanho real
-  }
+  function scrollEnd() {
+    setTimeout(() => { const m = msgs(); if(m) m.scrollTop = m.scrollHeight; }, 150);
+  }
 
   /* ─── MESSAGES ─── */
   function addBot(html, delay) {
@@ -414,15 +442,17 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       el.appendChild(btn);
     });
   }
-  function showInput(ph, cb) {
+  function showInput(ph, cb, opts) {
     $("csc-replies").style.display = "none";
     $("csc-bottom").style.display = "block";
     $("csc-inp-wrap").classList.add("on");
     const i = $("csc-inp"), s = $("csc-send");
     i.placeholder = ph; i.value = "";
+    i.type = opts && opts.type ? opts.type : "text";
+    if (opts && opts.max) i.maxLength = opts.max; else i.removeAttribute("maxlength");
     setTimeout(() => i.focus(), 100);
     function fire() { const v = i.value.trim(); if (!v) return; clear(); cb(v); }
-    function clear() { s.onclick = null; i.onkeydown = null; $("csc-inp-wrap").classList.remove("on"); $("csc-bottom").style.display = "none"; }
+    function clear() { s.onclick = null; i.onkeydown = null; $("csc-inp-wrap").classList.remove("on"); $("csc-bottom").style.display = "none"; i.type = "text"; }
     s.onclick = fire;
     i.onkeydown = e => { if (e.key === "Enter") fire(); };
   }
@@ -457,7 +487,6 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     const preview = modo === "parcela"
       ? `≈ Carta estimada: <b>${fmt(parcelaToCarta(S.tipo, val, pr))}</b> em ${pr} meses`
       : `≈ Parcela estimada: <b>${fmt(cartaToParcela(S.tipo, val, pr))}/mês</b> em ${pr} meses`;
-
     return `<div class="csc-slider-wrap" id="csc-slid">
       <div class="csc-slider-top">
         <span class="csc-slider-lbl">Simular por</span>
@@ -478,20 +507,17 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   function attachSlider() {
     const r = $("csc-range"), n = $("csc-vnum");
     if (!r) return;
-
     function refreshPreview(val) {
       const prev = $("csc-preview"); if (!prev) return;
       const pr = prazoRef(S.tipo);
       if (S.mode === "parcela") {
-        const ce = parcelaToCarta(S.tipo, val, pr);
-        S.valor = ce;
+        const ce = parcelaToCarta(S.tipo, val, pr); S.valor = ce;
         prev.innerHTML = `≈ Carta estimada: <b>${fmt(ce)}</b> em ${pr} meses`;
       } else {
         const pe = cartaToParcela(S.tipo, val, pr);
         prev.innerHTML = `≈ Parcela estimada: <b>${fmt(pe)}/mês</b> em ${pr} meses`;
       }
     }
-
     r.addEventListener("input", () => {
       const cfg = SLIDER[S.tipo][S.mode];
       const val = parseInt(r.value);
@@ -501,20 +527,16 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       if (S.mode === "carta") S.valor = val; else S.parcela = val;
       refreshPreview(val);
     });
-
     function switchMode(novo) {
       S.mode = novo;
       const cfg = SLIDER[S.tipo][novo];
       const mc = $("csc-mc"), mp = $("csc-mp");
       mc.classList.toggle("on", novo === "carta");
       mp.classList.toggle("on", novo === "parcela");
-      const lbl = $("csc-slid-lbl");
-      if (lbl) lbl.textContent = cfg.label + ":";
+      const lbl = $("csc-slid-lbl"); if (lbl) lbl.textContent = cfg.label + ":";
       const rmin = $("csc-rmin"), rmax = $("csc-rmax");
       if (rmin) rmin.textContent = cfg.fmtMin;
       if (rmax) rmax.textContent = cfg.fmtMax;
-
-      // converte valor atual para o novo modo usando prazo de referência
       const pr = prazoRef(S.tipo);
       let newVal;
       if (novo === "parcela") {
@@ -526,14 +548,12 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
         newVal = Math.max(cfg.min, Math.min(cfg.max, Math.round(ce / cfg.step) * cfg.step));
         S.valor = newVal;
       }
-
       r.min = cfg.min; r.max = cfg.max; r.step = cfg.step; r.value = newVal;
       const pct = Math.round((newVal - cfg.min) / (cfg.max - cfg.min) * 100);
       r.style.setProperty("--pct", pct + "%");
       n.textContent = newVal.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
       refreshPreview(newVal);
     }
-
     $("csc-mc").onclick = () => switchMode("carta");
     $("csc-mp").onclick = () => switchMode("parcela");
   }
@@ -557,23 +577,74 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     </div>`;
   }
 
+  function summaryHTML() {
+    const d = S.simData, p = PROD[S.tipo];
+    const rows = [
+      ["Nome", S.nome], ["CPF/CNPJ", S.cpf], ["Nascimento", S.nascimento],
+      ["Telefone", S.tel], ["E-mail", S.email],
+      ["CEP", S.cep], ["Endereço", `${S.rua}, ${S.numero}${S.complemento ? ` – ${S.complemento}` : ""}`],
+      ["Cidade / Estado", `${S.cidade} / ${S.estado}`],
+      ["Renda mensal", S.renda],
+      ["Produto", `${p.emoji} ${p.label}`],
+      ["Carta de crédito", fmt(S.valor)],
+      ["Parcela estimada", `${fmt(d.parcela)}/mês`],
+      ["Prazo", `${S.prazo} meses`]
+    ];
+    return `<div class="csc-summary">
+      <div class="csc-summary-head"><div class="csc-summary-ico">👤</div><div><div class="csc-summary-ttl">Resumo do Cadastro</div></div></div>
+      ${rows.map(([k,v]) => `<div class="csc-srow"><span class="csc-srow-k">${k}</span><span class="csc-srow-v">${v||"–"}</span></div>`).join("")}
+    </div>`;
+  }
+
+  function seguroHTML() {
+    const segVal = S.simData.parcela * 0.03;
+    return `<div class="csc-seguro">
+      <div class="csc-seguro-head"><div class="csc-seguro-ttl">🛡️ Proteção Consórcio</div><div class="csc-seguro-sub">Seguro opcional · cobertura completa</div></div>
+      <div class="csc-seguro-item"><span>✅</span>Proteção em caso de desemprego involuntário</div>
+      <div class="csc-seguro-item"><span>✅</span>Cobertura de invalidez permanente</div>
+      <div class="csc-seguro-item"><span>✅</span>Quitação do saldo em caso de falecimento</div>
+      <div class="csc-seguro-item"><span>✅</span>Assistência jurídica e residencial</div>
+      <div class="csc-seguro-price">
+        <span class="csc-seguro-price-lbl">Custo adicional</span>
+        <span class="csc-seguro-price-val">${fmt(segVal)}/mês</span>
+      </div>
+    </div>`;
+  }
+
   function contractHTML() {
     const id = "APC-" + Date.now().toString(36).toUpperCase().slice(-6);
     S.contractId = id;
     const d = S.simData;
+    const segLabel = S.seguro ? " + seguro" : "";
     return `<div class="csc-contract">
       <div class="csc-contract-head">
         <div class="csc-contract-ico">📄</div>
         <div><div class="csc-contract-ttl">Contrato de Adesão</div><div class="csc-contract-id">${id} · ${now()}</div></div>
       </div>
       <div class="csc-crow"><span class="csc-crow-k">Contratante</span><span class="csc-crow-v">${S.nome}</span></div>
+      <div class="csc-crow"><span class="csc-crow-k">CPF/CNPJ</span><span class="csc-crow-v">${S.cpf}</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Produto</span><span class="csc-crow-v">${PROD[S.tipo].emoji} ${PROD[S.tipo].label}</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Crédito</span><span class="csc-crow-v">${fmt(S.valor)}</span></div>
-      <div class="csc-crow"><span class="csc-crow-k">Parcela</span><span class="csc-crow-v">${fmt(d.parcela)}/mês</span></div>
+      <div class="csc-crow"><span class="csc-crow-k">Parcela</span><span class="csc-crow-v">${fmt(d.parcela)}/mês${segLabel}</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Prazo</span><span class="csc-crow-v">${S.prazo} meses</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Taxa adm. total</span><span class="csc-crow-v">${d.taxaAdm}%</span></div>
+      ${S.seguro ? `<div class="csc-crow"><span class="csc-crow-k">Seguro</span><span class="csc-crow-v" style="color:#1440fe">✅ Incluído</span></div>` : ""}
       <button class="csc-sign-btn" id="csc-sign">✍️ Assinar Digitalmente</button>
       <div class="csc-signed-ok" id="csc-signed">✅ Assinado digitalmente às ${now()}</div>
+    </div>`;
+  }
+
+  function emitHTML() {
+    const d = S.simData;
+    return `<div class="csc-emit">
+      <div class="csc-emit-head"><div class="csc-emit-ttl">📋 Contrato Emitido</div><div class="csc-emit-sub">${S.contractId} · ${now()}</div></div>
+      <div class="csc-emit-row"><span class="csc-emit-k">Contratante</span><span class="csc-emit-v">${S.nome}</span></div>
+      <div class="csc-emit-row"><span class="csc-emit-k">Produto</span><span class="csc-emit-v">${PROD[S.tipo].emoji} ${PROD[S.tipo].label}</span></div>
+      <div class="csc-emit-row"><span class="csc-emit-k">Carta de crédito</span><span class="csc-emit-v">${fmt(S.valor)}</span></div>
+      <div class="csc-emit-row"><span class="csc-emit-k">Parcela</span><span class="csc-emit-v">${fmt(d.parcela)}/mês</span></div>
+      <div class="csc-emit-row"><span class="csc-emit-k">Prazo</span><span class="csc-emit-v">${S.prazo} meses</span></div>
+      <div class="csc-emit-row"><span class="csc-emit-k">Seguro</span><span class="csc-emit-v">${S.seguro ? "✅ Incluído" : "Não contratado"}</span></div>
+      <a class="csc-emit-dl" href="#" onclick="return false;">📥 Baixar contrato em PDF</a>
     </div>`;
   }
 
@@ -682,15 +753,12 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   }
 
   async function goValor() {
-    // garante S.valor preenchido independente do modo
     if (S.mode === "parcela") {
       S.valor = parcelaToCarta(S.tipo, S.parcela || SLIDER[S.tipo].parcela.min, prazoRef(S.tipo));
     }
     if (!S.valor) S.valor = SLIDER[S.tipo].carta.min;
-
     setProgress("valor"); hideControls();
     document.querySelector(".csc-slider-wrap")?.parentElement?.remove();
-
     const label = S.mode === "parcela"
       ? `Parcela de ${fmt(S.parcela)}/mês → Carta ~${fmt(S.valor)}`
       : fmt(S.valor);
@@ -735,38 +803,115 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   async function goTel() {
     setProgress("tel"); await typing(700);
     await addBot(`Prazer, <b>${S.nome.split(" ")[0]}</b>! 😊 Qual é o seu <b>telefone com DDD</b>?`);
-    showInput("(00) 00000-0000", v => { S.tel = v; addUsr(v).then(() => goEmail()); });
+    showInput("(00) 00000-0000", v => { S.tel = v; addUsr(v).then(() => goCpf()); }, { max: 20 });
+  }
+
+  async function goCpf() {
+    setProgress("cpf"); await typing(600);
+    await addBot("Qual é o seu <b>CPF ou CNPJ</b>?");
+    showInput("000.000.000-00", v => { S.cpf = v; addUsr(v).then(() => goNascimento()); }, { max: 18 });
+  }
+
+  async function goNascimento() {
+    setProgress("nascimento"); await typing(600);
+    await addBot("Qual é a sua <b>data de nascimento</b>?");
+    showInput("DD/MM/AAAA", v => { S.nascimento = v; addUsr(v).then(() => goEmail()); }, { max: 10 });
   }
 
   async function goEmail() {
     setProgress("email"); await typing(600);
     await addBot("E seu <b>e-mail</b> para receber o contrato?");
-    showInput("seuemail@exemplo.com", v => { S.email = v; addUsr(v).then(() => goContrato()); });
+    showInput("seuemail@exemplo.com", v => { S.email = v; addUsr(v).then(() => goCep()); });
   }
 
-  async function goContrato() {
-    setProgress("contrato"); hideControls();
-    await typing(1600);
-    await addBot("Gerando seu contrato… ✅");
-    inject(contractHTML());
+  async function goCep() {
+    setProgress("cep"); await typing(700);
+    await addBot("Agora vamos ao seu <b>endereço</b>. 📍<br>Qual é o seu <b>CEP</b>?");
+    showInput("00000-000", v => { S.cep = v; addUsr(v).then(() => goRua()); }, { max: 9 });
+  }
+
+  async function goRua() {
+    setProgress("rua"); await typing(600);
+    await addBot("Qual é o nome da sua <b>rua / logradouro</b>?");
+    showInput("Nome da rua…", v => { S.rua = v; addUsr(v).then(() => goNumero()); });
+  }
+
+  async function goNumero() {
+    setProgress("numero"); await typing(500);
+    await addBot("Qual é o <b>número</b>?");
+    showInput("Número…", v => { S.numero = v; addUsr(v).then(() => goComplemento()); }, { max: 10 });
+  }
+
+  async function goComplemento() {
+    setProgress("complemento"); await typing(500);
+    await addBot("Tem <b>complemento</b>? (apto, bloco, casa…)<br><small style='color:#aaa'>Digite ou deixe em branco e pressione Enter</small>");
+    showInput("Apto 12, Bloco B… (opcional)", v => { S.complemento = v; addUsr(v || "Sem complemento").then(() => goCidade()); });
+  }
+
+  async function goCidade() {
+    setProgress("cidade"); await typing(500);
+    await addBot("Qual é a sua <b>cidade</b>?");
+    showInput("Nome da cidade…", v => { S.cidade = v; addUsr(v).then(() => goEstado()); });
+  }
+
+  async function goEstado() {
+    setProgress("estado"); await typing(500);
+    await addBot("E o <b>estado</b> (UF)?");
+    const ufs = ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"];
+    const wrap = inject(`<div class="csc-pills">${ufs.map(u => `<button class="csc-pill" data-u="${u}">${u}</button>`).join("")}</div>`);
+    wrap.querySelectorAll(".csc-pill").forEach(btn => {
+      btn.onclick = () => { S.estado = btn.dataset.u; addUsr(S.estado).then(() => { wrap.remove(); goRenda(); }); };
+    });
+    $("csc-replies").style.display = "none";
+  }
+
+  async function goRenda() {
+    setProgress("renda"); await typing(700);
+    await addBot("Ótimo! 💰 Qual é a sua <b>renda mensal bruta aproximada</b>?");
+    const faixas = ["Até R$ 3.000","R$ 3.001 – R$ 5.000","R$ 5.001 – R$ 10.000","R$ 10.001 – R$ 20.000","Acima de R$ 20.000"];
+    const wrap = inject(`<div class="csc-pills">${faixas.map(f => `<button class="csc-pill" data-f="${f}">${f}</button>`).join("")}</div>`);
+    wrap.querySelectorAll(".csc-pill").forEach(btn => {
+      btn.onclick = () => { S.renda = btn.dataset.f; addUsr(S.renda).then(() => { wrap.remove(); goResumo(); }); };
+    });
+  }
+
+  async function goResumo() {
+    setProgress("resumo"); hideControls();
+    await typing(1000);
+    await addBot("Perfeito! 📋 Confira o <b>resumo do seu cadastro</b> antes de prosseguir:");
+    inject(summaryHTML());
     await typing(500);
-    await addBot("Leia e assine digitalmente para avançar. ✍️");
-    setTimeout(() => {
-      const btn = $("csc-sign"), sig = $("csc-signed");
-      if (!btn) return;
-      btn.onclick = async () => {
-        btn.textContent = "Assinando…"; btn.disabled = true;
-        await sl(1400);
-        btn.style.display = "none"; sig.style.display = "block";
-        await sl(600);
-        await addBot(`Contrato assinado! ✅ Cópia enviada para <b>${S.email}</b>.<br>Vamos ao <b>pagamento da 1ª parcela</b> de <b class="g">${fmt(S.simData.parcela)}</b>.`, 500);
-        goPagamento();
-      };
-    }, 300);
+    await addBot("Os dados estão corretos?");
+    setReplies([
+      { label:"✅ Confirmar cadastro", wide:true, cb:() => goSeguro() },
+      { label:"✏️ Corrigir dados", sec:true, cb:() => {
+        hideControls();
+        addUsr("Quero corrigir os dados").then(() => typing(600).then(() => {
+          addBot("Sem problema! Vamos rever seus dados. 😊<br>Qual é o seu <b>nome completo</b>?");
+          showInput("Seu nome completo…", v => { S.nome = v; addUsr(v).then(() => goTel()); });
+        }));
+      }}
+    ]);
+  }
+
+  async function goSeguro() {
+    setProgress("seguro"); hideControls();
+    await addUsr("Confirmar cadastro");
+    await typing(1000);
+    await addBot("Ótimo! 🛡️ Que tal proteger sua cota com o <b>Seguro Consórcio</b>?");
+    inject(seguroHTML());
+    await typing(400);
+    await addBot("Deseja adicionar o seguro ao seu plano?");
+    setReplies([
+      { label:"✅ Sim, quero o seguro", wide:true, cb:() => { S.seguro = true;  addUsr("Sim, quero o seguro").then(() => goPagamento()); } },
+      { label:"❌ Não, obrigado",       sec:true,  cb:() => { S.seguro = false; addUsr("Não, obrigado").then(() => goPagamento()); } }
+    ]);
   }
 
   async function goPagamento() {
     setProgress("pagamento");
+    await typing(800);
+    await addBot(`Vamos ao <b>pagamento da 1ª parcela</b> de <b class="g">${fmt(S.simData.parcela)}</b>.<br>Escolha a forma de pagamento:`);
     inject(`<div class="csc-pay-btns">
       <div class="csc-pay-opt" id="csc-p-pix"><div class="csc-pay-ico" style="background:rgba(20,64,254,.08)">⚡</div><div class="csc-pay-info"><div class="csc-pay-name">PIX</div><div class="csc-pay-desc">Confirmação imediata</div></div><span class="csc-pay-arrow">›</span></div>
       <div class="csc-pay-opt" id="csc-p-card"><div class="csc-pay-ico" style="background:rgba(20,64,254,.08)">💳</div><div class="csc-pay-info"><div class="csc-pay-name">Cartão de Crédito</div><div class="csc-pay-desc">Visa, Master, Elo</div></div><span class="csc-pay-arrow">›</span></div>
@@ -788,7 +933,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     setTimeout(() => {
       const cp = $("csc-pix-copy"), ok = $("csc-pix-ok");
       if (cp) cp.onclick = () => { cp.textContent = "✓ Chave copiada!"; cp.style.background = "#dde5ff"; };
-      if (ok) ok.onclick = () => goFim();
+      if (ok) ok.onclick = () => goPagamentoConfirmado();
     }, 200);
   }
 
@@ -800,7 +945,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     setTimeout(() => {
       const cc = $("csc-cc"), ok = $("csc-card-ok");
       if (cc) cc.addEventListener("input", e => { let v = e.target.value.replace(/\D/g,"").slice(0,16); e.target.value = v.replace(/(.{4})/g,"$1 ").trim(); });
-      if (ok) ok.onclick = () => goFim();
+      if (ok) ok.onclick = () => goPagamentoConfirmado();
     }, 200);
   }
 
@@ -812,28 +957,74 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     setTimeout(() => {
       const cp = $("csc-bol-copy"), ok = $("csc-bol-ok");
       if (cp) cp.onclick = () => { cp.textContent = "✓ Código copiado!"; };
-      if (ok) ok.onclick = () => goFim();
+      if (ok) ok.onclick = () => goPagamentoConfirmado();
     }, 200);
+  }
+
+  async function goPagamentoConfirmado() {
+    setProgress("contrato"); hideControls();
+    await typing(1400);
+    await addBot("✅ Pagamento confirmado! Gerando seu <b>contrato oficial</b>…");
+    inject(contractHTML());
+    await typing(500);
+    await addBot("Leia atentamente e assine digitalmente para concluir. ✍️");
+    setTimeout(() => {
+      const btn = $("csc-sign"), sig = $("csc-signed");
+      if (!btn) return;
+      btn.onclick = async () => {
+        btn.textContent = "Assinando…"; btn.disabled = true;
+        await sl(1400);
+        btn.style.display = "none"; sig.style.display = "block";
+        await sl(600);
+        await addBot(`Contrato assinado com sucesso! 🎉<br>Cópia enviada para <b>${S.email}</b>.`);
+        await sl(800);
+        goFim();
+      };
+    }, 300);
   }
 
   async function goFim() {
     setProgress("fim"); hideControls();
-    await typing(1600);
+    await typing(1200);
+    await addBot("🎊 Emitindo seu contrato definitivo…");
+    inject(emitHTML());
+    await typing(800);
     inject(`<div class="csc-success">
       <div class="csc-success-ani">🎉</div>
-      <div class="csc-success-ttl">Pagamento Confirmado!</div>
+      <div class="csc-success-ttl">Cota Ativa!</div>
       <div class="csc-success-id">${S.contractId}</div>
       <div class="csc-success-txt">Sua <b style="color:#1440fe">cota está ativa</b>!<br>Você receberá os detalhes em <b>${S.email}</b>.<br><br>Bem-vindo(a) ao grupo Autopilot Consórcios! 🚀</div>
     </div>`);
     await typing(700);
     await addBot(`Qualquer dúvida, fale conosco pelo WhatsApp. Obrigado, <b>${S.nome.split(" ")[0]}</b>! 😊`);
     setTimeout(() => {
-      setReplies([{ label:"🔄 Nova simulação", wide:true, cb:() => {
-        msgs().innerHTML = "";
-        Object.assign(S, { tipo:null, valor:0, parcela:0, mode:"carta", prazo:0, nome:"", tel:"", email:"", contractId:null, simData:null });
-        welcome();
-      }}]);
+      setReplies([
+        { label:"🔄 Nova simulação", cb:() => {
+          msgs().innerHTML = "";
+          Object.assign(S, { tipo:null, valor:0, parcela:0, mode:"carta", prazo:0, nome:"", tel:"", cpf:"", nascimento:"", email:"", cep:"", rua:"", numero:"", complemento:"", cidade:"", estado:"", renda:"", seguro:false, contractId:null, simData:null });
+          welcome();
+        }},
+        { label:"🚪 Encerrar atendimento", sec:true, cb:() => goEncerrar() }
+      ]);
     }, 1000);
+  }
+
+  async function goEncerrar() {
+    setProgress("bye"); hideControls();
+    await addUsr("Encerrar atendimento");
+    await typing(800);
+    await addBot(`Foi um prazer te atender, <b>${S.nome.split(" ")[0]}</b>! 😊<br>Até a próxima!`);
+    inject(`<div class="csc-bye">
+      <div class="csc-bye-ani">👋</div>
+      <div class="csc-bye-ttl">Atendimento encerrado</div>
+      <div class="csc-bye-txt">Obrigado por escolher a <b>Autopilot Consórcios</b>.<br>Você será redirecionado para nossa página principal.</div>
+      <button class="csc-bye-redirect" id="csc-redirect">🌐 Ir para a página principal</button>
+    </div>`);
+    setTimeout(() => {
+      const btn = $("csc-redirect");
+      if (btn) btn.onclick = () => { window.location.href = "https://www.consorcioservopa.com.br/"; };
+      setTimeout(() => { window.location.href = "https://www.consorcioservopa.com.br/"; }, 6000);
+    }, 300);
   }
 
   /* ─── BOOT ─── */
