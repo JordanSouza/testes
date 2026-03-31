@@ -1022,8 +1022,8 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     </div>`);
     setTimeout(() => {
       const btn = $("csc-redirect");
-      if (btn) btn.onclick = () => { window.location.href = "https://www.consorcioservopa.com.br/"; };
-      setTimeout(() => { window.location.href = "https://www.consorcioservopa.com.br/"; }, 6000);
+      if (btn) btn.onclick = () => { window.location.href = "https://autoforce-academy.autodromo.app/jporscheteste/"; };
+      setTimeout(() => { window.location.href = "https://autoforce-academy.autodromo.app/jporscheteste/"; }, 6000);
     }, 300);
   }
 
