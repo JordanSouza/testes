@@ -74,7 +74,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-msgs {
   flex:1; overflow-y:auto; padding:18px 16px 10px;
   display:flex; flex-direction:column; gap:10px;
-  scroll-behavior:smooth; background:#f8f9fb;
+  scroll-behavior:smooth; background:#f4f7ff; /* <-- Nova cor Gelo Azulado Suave */
 }
 .csc-msgs::-webkit-scrollbar { width:3px; }
 .csc-msgs::-webkit-scrollbar-thumb { background:#ddd; border-radius:2px; }
