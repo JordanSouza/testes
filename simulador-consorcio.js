@@ -74,7 +74,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-msgs {
   flex:1; overflow-y:auto; padding:18px 16px 10px;
   display:flex; flex-direction:column; gap:10px;
-  scroll-behavior:smooth; background:#f4f7ff; /* <-- Nova cor Gelo Azulado Suave */
+  scroll-behavior:smooth; background:#f4f7ff;
 }
 .csc-msgs::-webkit-scrollbar { width:3px; }
 .csc-msgs::-webkit-scrollbar-thumb { background:#ddd; border-radius:2px; }
@@ -87,10 +87,9 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   box-shadow:0 2px 8px rgba(0,0,0,.12);
 }
 .csc-bub {
-  max-width: 100%;
-  padding: 11px 14px; border-radius: 18px;
-  font-size: .88rem; line-height: 1.55;
-  animation: csc-in .2s ease; position: relative; word-wrap: break-word;
+  max-width:100%; padding:11px 14px; border-radius:18px;
+  font-size:.88rem; line-height:1.55;
+  animation:csc-in .2s ease; position:relative; word-wrap:break-word;
 }
 @keyframes csc-in { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
 .csc-row.bot .csc-bub { background:#fff; color:#2d3436; border-bottom-left-radius:4px; box-shadow:0 2px 10px rgba(0,0,0,.08); }
@@ -123,8 +122,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   width:22px; height:22px; border-radius:50%;
   border:2px solid #1440fe; color:#1440fe;
   display:flex; align-items:center; justify-content:center;
-  font-size:.9rem; font-weight:700;
-  transition:background .15s, color .15s;
+  font-size:.9rem; font-weight:700; transition:background .15s, color .15s;
 }
 .csc-card:hover .csc-card-plus { background:#1440fe; color:#fff; }
 .csc-slider-wrap {
@@ -184,8 +182,6 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-ritem-v.g { color:#1440fe; }
 .csc-badge-row { padding:10px 14px; }
 .csc-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(20,64,254,.08); border:1px solid rgba(20,64,254,.2); border-radius:20px; padding:4px 10px; font-size:.7rem; font-weight:700; color:#1440fe; }
-
-/* ── Resumo de Cadastro ── */
 .csc-summary { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-summary-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
 .csc-summary-ico { width:32px; height:32px; background:linear-gradient(135deg,#001a91,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
@@ -194,8 +190,6 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-srow:last-of-type { border:none; }
 .csc-srow-k { color:#888; }
 .csc-srow-v { font-weight:700; color:#1a1a2e; max-width:58%; text-align:right; word-break:break-word; }
-
-/* ── Seguro ── */
 .csc-seguro { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-seguro-head { padding:14px 16px 10px; background:linear-gradient(120deg,#001a91,#1440fe); color:#fff; }
 .csc-seguro-ttl { font-weight:900; font-size:.95rem; margin-bottom:2px; }
@@ -206,7 +200,6 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-seguro-price { padding:9px 16px; display:flex; justify-content:space-between; align-items:center; background:#f8f9fb; border-top:1px solid #eee; }
 .csc-seguro-price-lbl { font-size:.7rem; color:#888; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
 .csc-seguro-price-val { font-size:1rem; font-weight:900; color:#1440fe; }
-
 .csc-contract { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-contract-head { padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eee; display:flex; align-items:center; gap:10px; }
 .csc-contract-ico { width:32px; height:32px; background:linear-gradient(135deg,#001a91,#1440fe); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; }
@@ -224,8 +217,6 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 }
 .csc-sign-btn:hover { opacity:.9; }
 .csc-signed-ok { display:none; margin:0 16px 14px; padding:10px; border-radius:10px; background:#eef1ff; color:#1440fe; font-weight:700; font-size:.8rem; text-align:center; }
-
-/* ── Contrato Emitido ── */
 .csc-emit { background:#fff; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.1); margin:4px 14px 0; overflow:hidden; animation:csc-in .25s ease; }
 .csc-emit-head { padding:14px 16px; background:linear-gradient(120deg,#001a91,#1440fe); color:#fff; }
 .csc-emit-ttl { font-weight:900; font-size:.95rem; margin-bottom:2px; }
@@ -235,7 +226,6 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-emit-k { color:#888; }
 .csc-emit-v { font-weight:700; color:#1a1a2e; }
 .csc-emit-dl { margin:10px 16px 14px; display:block; text-align:center; padding:10px; border-radius:10px; background:rgba(20,64,254,.06); border:1px solid rgba(20,64,254,.2); color:#1440fe; font-weight:800; font-size:.82rem; cursor:pointer; text-decoration:none; font-family:'Nunito',sans-serif; }
-
 .csc-pay-btns { display:grid; grid-template-columns:1fr; gap:8px; margin:4px 14px 10px; animation:csc-in .25s ease; }
 .csc-pay-opt {
   background:#fff; border:2px solid #eee; border-radius:14px;
@@ -281,14 +271,14 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 .csc-success-ttl { font-weight:900; font-size:1.05rem; color:#1440fe; margin-bottom:6px; }
 .csc-success-id { font-size:.72rem; background:#f0f2f5; border-radius:6px; padding:4px 10px; display:inline-block; margin:8px 0; color:#555; }
 .csc-success-txt { font-size:.8rem; color:#666; line-height:1.6; }
-
-/* ── Encerramento ── */
 .csc-bye { text-align:center; padding:12px 4px 6px; animation:csc-in .25s ease; margin:4px 14px 0; }
 .csc-bye-ani { font-size:2.2rem; margin-bottom:8px; }
 .csc-bye-ttl { font-weight:900; font-size:1rem; color:#1a1a2e; margin-bottom:6px; }
 .csc-bye-txt { font-size:.8rem; color:#666; line-height:1.6; margin-bottom:12px; }
 .csc-bye-redirect { width:100%; padding:12px; border-radius:10px; background:linear-gradient(135deg,#001a91,#1440fe); color:#fff; border:none; font-weight:800; font-size:.88rem; cursor:pointer; font-family:'Nunito',sans-serif; }
-
+/* campo inválido shake */
+@keyframes csc-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+.csc-inp-error { animation: csc-shake .3s ease; border-color: #ef4444 !important; }
 .csc-replies { display:none; flex-wrap:wrap; gap:7px; padding:10px 14px 12px; background:#fff; border-top:1px solid #f0f2f5; flex-shrink:0; }
 .csc-reply {
   padding:8px 16px; border-radius:22px; border:2px solid rgba(20,64,254,.25);
@@ -366,7 +356,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   const S = {
     tipo:null, valor:0, parcela:0, mode:"carta", prazo:0,
     nome:"", tel:"", cpf:"", nascimento:"", email:"",
-    cep:"", rua:"", numero:"", complemento:"", cidade:"", estado:"",
+    cep:"", rua:"", bairro:"", numero:"", complemento:"", cidade:"", estado:"",
     renda:"", seguro:false, contractId:null, simData:null
   };
 
@@ -378,9 +368,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   const msgs = () => $("csc-msgs");
 
   function fator(tipo) {
-    return tipo === "veiculo"
-      ? (1 + PROD[tipo].adminRate + 0.02 + 0.008)
-      : (1 + PROD[tipo].adminRate + 0.02 + 0.005);
+    return tipo === "veiculo" ? (1 + PROD[tipo].adminRate + 0.02 + 0.008) : (1 + PROD[tipo].adminRate + 0.02 + 0.005);
   }
   function parcelaToCarta(tipo, parcela, prazo) { return Math.round((parcela * prazo) / fator(tipo)); }
   function cartaToParcela(tipo, carta, prazo)   { return Math.round((carta * fator(tipo)) / prazo); }
@@ -391,15 +379,12 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     document.querySelectorAll(".csc-step-dot").forEach((d,idx) => {
       d.classList.remove("done","active");
       const p = Math.round((i / (STEPS.length - 1)) * 7);
-      if (idx < p) d.classList.add("done");
-      else if (idx === p) d.classList.add("active");
+      if (idx < p) d.classList.add("done"); else if (idx === p) d.classList.add("active");
     });
     const lbl = $("csc-step-lbl"); if (lbl) lbl.textContent = LABELS[name] || "";
   }
 
-  function scrollEnd() {
-    setTimeout(() => { const m = msgs(); if(m) m.scrollTop = m.scrollHeight; }, 150);
-  }
+  function scrollEnd() { setTimeout(() => { const m = msgs(); if(m) m.scrollTop = m.scrollHeight; }, 150); }
 
   /* ─── MESSAGES ─── */
   function addBot(html, delay) {
@@ -442,46 +427,109 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       el.appendChild(btn);
     });
   }
+
+  /* ─── MÁSCARAS ─── */
+  const MASKS = {
+    tel: v => {
+      v = v.replace(/\D/g,"").slice(0,11);
+      if (v.length <= 10) return v.replace(/(\d{2})(\d{4})(\d{0,4})/,"($1) $2-$3").replace(/-$/,"");
+      return v.replace(/(\d{2})(\d{5})(\d{0,4})/,"($1) $2-$3").replace(/-$/,"");
+    },
+    cpf: v => {
+      v = v.replace(/\D/g,"");
+      if (v.length <= 11)
+        return v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/,"$1.$2.$3-$4").replace(/[.\-]+$/,"");
+      return v.slice(0,14).replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})/,"$1.$2.$3/$4-$5").replace(/[.\-\/]+$/,"");
+    },
+    nascimento: v => {
+      v = v.replace(/\D/g,"").slice(0,8);
+      return v.replace(/(\d{2})(\d{2})(\d{0,4})/,"$1/$2/$3").replace(/\/+$/,"");
+    },
+    cep: v => {
+      v = v.replace(/\D/g,"").slice(0,8);
+      return v.replace(/(\d{5})(\d{0,3})/,"$1-$2").replace(/-$/,"");
+    },
+    nome:    v => v.replace(/[^a-zA-Z\u00C0-\u00FF\s]/g,""),
+    email:   v => v,
+    numero:  v => v.replace(/[^a-zA-Z0-9\-]/g,"").slice(0,10),
+    default: v => v
+  };
+
   function showInput(ph, cb, opts) {
     $("csc-replies").style.display = "none";
     $("csc-bottom").style.display = "block";
     $("csc-inp-wrap").classList.add("on");
     const i = $("csc-inp"), s = $("csc-send");
     i.placeholder = ph; i.value = "";
-    i.type = opts && opts.type ? opts.type : "text";
+    i.type        = (opts && opts.type)      ? opts.type      : "text";
+    i.inputMode   = (opts && opts.inputMode) ? opts.inputMode : "text";
     if (opts && opts.max) i.maxLength = opts.max; else i.removeAttribute("maxlength");
+
+    const mask = (opts && opts.mask) ? opts.mask : null;
+
+    function onInput() {
+      if (!mask) return;
+      const pos = i.selectionStart;
+      const masked = (MASKS[mask] || MASKS.default)(i.value);
+      if (masked !== i.value) { i.value = masked; try { i.setSelectionRange(pos, pos); } catch(e){} }
+    }
+    i.addEventListener("input", onInput);
     setTimeout(() => i.focus(), 100);
-    function fire() { const v = i.value.trim(); if (!v) return; clear(); cb(v); }
-    function clear() { s.onclick = null; i.onkeydown = null; $("csc-inp-wrap").classList.remove("on"); $("csc-bottom").style.display = "none"; i.type = "text"; }
+
+    function shake() {
+      i.classList.remove("csc-inp-error");
+      void i.offsetWidth; // reflow
+      i.classList.add("csc-inp-error");
+      setTimeout(() => i.classList.remove("csc-inp-error"), 500);
+    }
+
+    function validate(v) {
+      if (mask === "tel"        && v.replace(/\D/g,"").length < 10) return false;
+      if (mask === "cpf")       { const d = v.replace(/\D/g,""); if (d.length !== 11 && d.length !== 14) return false; }
+      if (mask === "nascimento" && v.replace(/\D/g,"").length < 8)  return false;
+      if (mask === "cep"        && v.replace(/\D/g,"").length < 8)  return false;
+      if (mask === "email"      && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return false;
+      return true;
+    }
+
+    function fire() {
+      const v = i.value.trim(); if (!v) return;
+      if (!validate(v)) { shake(); return; }
+      clear(); cb(v);
+    }
+    function clear() {
+      s.onclick = null; i.onkeydown = null;
+      i.removeEventListener("input", onInput);
+      $("csc-inp-wrap").classList.remove("on");
+      $("csc-bottom").style.display = "none";
+      i.type = "text"; i.inputMode = "text";
+    }
     s.onclick = fire;
     i.onkeydown = e => { if (e.key === "Enter") fire(); };
   }
+
   function hideControls() { $("csc-replies").style.display = "none"; $("csc-bottom").style.display = "none"; }
   function inject(html) {
     const w = document.createElement("div");
     w.style.cssText = "margin:4px 0 0;animation:csc-in .25s ease;";
-    w.innerHTML = html;
-    msgs().appendChild(w); scrollEnd(); return w;
+    w.innerHTML = html; msgs().appendChild(w); scrollEnd(); return w;
   }
 
   /* ─── CALC ─── */
   function calc(tipo, valor, prazo) {
     const p = PROD[tipo];
-    const adm = valor * p.adminRate;
-    const res = valor * 0.02;
+    const adm = valor * p.adminRate, res = valor * 0.02;
     const seg = tipo === "veiculo" ? valor * 0.008 : valor * 0.005;
-    const total = valor + adm + res + seg;
-    const parcela = total / prazo;
+    const total = valor + adm + res + seg, parcela = total / prazo;
     const contemp = tipo === "veiculo" ? Math.round(prazo * .18) : Math.round(prazo * .22);
     return { parcela, total, adm, res, seg, contemp, taxaAdm: (p.adminRate * 100).toFixed(0) };
   }
 
   /* ─── SLIDER ─── */
   function sliderHTML() {
-    const modo = S.mode;
-    const cfg  = SLIDER[S.tipo][modo];
-    const val  = modo === "carta" ? (S.valor || cfg.min) : (S.parcela || cfg.min);
-    const pct  = Math.round(((val - cfg.min) / (cfg.max - cfg.min)) * 100);
+    const modo = S.mode, cfg = SLIDER[S.tipo][modo];
+    const val = modo === "carta" ? (S.valor || cfg.min) : (S.parcela || cfg.min);
+    const pct = Math.round(((val - cfg.min) / (cfg.max - cfg.min)) * 100);
     const numFmt = val.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
     const pr = prazoRef(S.tipo);
     const preview = modo === "parcela"
@@ -497,16 +545,14 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       </div>
       <div class="csc-slider-lbl" id="csc-slid-lbl">${cfg.label}:</div>
       <div class="csc-val-display"><span class="prefix">R$</span><span id="csc-vnum">${numFmt}</span></div>
-      <input type="range" class="csc-range" id="csc-range"
-        min="${cfg.min}" max="${cfg.max}" step="${cfg.step}" value="${val}" style="--pct:${pct}%">
+      <input type="range" class="csc-range" id="csc-range" min="${cfg.min}" max="${cfg.max}" step="${cfg.step}" value="${val}" style="--pct:${pct}%">
       <div class="csc-range-labels"><span id="csc-rmin">${cfg.fmtMin}</span><span id="csc-rmax">${cfg.fmtMax}</span></div>
       <div class="csc-slider-preview" id="csc-preview">${preview}</div>
     </div>`;
   }
 
   function attachSlider() {
-    const r = $("csc-range"), n = $("csc-vnum");
-    if (!r) return;
+    const r = $("csc-range"), n = $("csc-vnum"); if (!r) return;
     function refreshPreview(val) {
       const prev = $("csc-preview"); if (!prev) return;
       const pr = prazoRef(S.tipo);
@@ -514,13 +560,11 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
         const ce = parcelaToCarta(S.tipo, val, pr); S.valor = ce;
         prev.innerHTML = `≈ Carta estimada: <b>${fmt(ce)}</b> em ${pr} meses`;
       } else {
-        const pe = cartaToParcela(S.tipo, val, pr);
-        prev.innerHTML = `≈ Parcela estimada: <b>${fmt(pe)}/mês</b> em ${pr} meses`;
+        prev.innerHTML = `≈ Parcela estimada: <b>${fmt(cartaToParcela(S.tipo, val, pr))}/mês</b> em ${pr} meses`;
       }
     }
     r.addEventListener("input", () => {
-      const cfg = SLIDER[S.tipo][S.mode];
-      const val = parseInt(r.value);
+      const cfg = SLIDER[S.tipo][S.mode], val = parseInt(r.value);
       const pct = Math.round((val - cfg.min) / (cfg.max - cfg.min) * 100);
       r.style.setProperty("--pct", pct + "%");
       n.textContent = val.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -528,11 +572,9 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       refreshPreview(val);
     });
     function switchMode(novo) {
-      S.mode = novo;
-      const cfg = SLIDER[S.tipo][novo];
-      const mc = $("csc-mc"), mp = $("csc-mp");
-      mc.classList.toggle("on", novo === "carta");
-      mp.classList.toggle("on", novo === "parcela");
+      S.mode = novo; const cfg = SLIDER[S.tipo][novo];
+      $("csc-mc").classList.toggle("on", novo === "carta");
+      $("csc-mp").classList.toggle("on", novo === "parcela");
       const lbl = $("csc-slid-lbl"); if (lbl) lbl.textContent = cfg.label + ":";
       const rmin = $("csc-rmin"), rmax = $("csc-rmax");
       if (rmin) rmin.textContent = cfg.fmtMin;
@@ -549,8 +591,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
         S.valor = newVal;
       }
       r.min = cfg.min; r.max = cfg.max; r.step = cfg.step; r.value = newVal;
-      const pct = Math.round((newVal - cfg.min) / (cfg.max - cfg.min) * 100);
-      r.style.setProperty("--pct", pct + "%");
+      r.style.setProperty("--pct", Math.round((newVal - cfg.min) / (cfg.max - cfg.min) * 100) + "%");
       n.textContent = newVal.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
       refreshPreview(newVal);
     }
@@ -583,6 +624,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       ["Nome", S.nome], ["CPF/CNPJ", S.cpf], ["Nascimento", S.nascimento],
       ["Telefone", S.tel], ["E-mail", S.email],
       ["CEP", S.cep], ["Endereço", `${S.rua}, ${S.numero}${S.complemento ? ` – ${S.complemento}` : ""}`],
+      ["Bairro", S.bairro],
       ["Cidade / Estado", `${S.cidade} / ${S.estado}`],
       ["Renda mensal", S.renda],
       ["Produto", `${p.emoji} ${p.label}`],
@@ -613,9 +655,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 
   function contractHTML() {
     const id = "APC-" + Date.now().toString(36).toUpperCase().slice(-6);
-    S.contractId = id;
-    const d = S.simData;
-    const segLabel = S.seguro ? " + seguro" : "";
+    S.contractId = id; const d = S.simData;
     return `<div class="csc-contract">
       <div class="csc-contract-head">
         <div class="csc-contract-ico">📄</div>
@@ -625,7 +665,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       <div class="csc-crow"><span class="csc-crow-k">CPF/CNPJ</span><span class="csc-crow-v">${S.cpf}</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Produto</span><span class="csc-crow-v">${PROD[S.tipo].emoji} ${PROD[S.tipo].label}</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Crédito</span><span class="csc-crow-v">${fmt(S.valor)}</span></div>
-      <div class="csc-crow"><span class="csc-crow-k">Parcela</span><span class="csc-crow-v">${fmt(d.parcela)}/mês${segLabel}</span></div>
+      <div class="csc-crow"><span class="csc-crow-k">Parcela</span><span class="csc-crow-v">${fmt(d.parcela)}/mês${S.seguro ? " + seguro" : ""}</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Prazo</span><span class="csc-crow-v">${S.prazo} meses</span></div>
       <div class="csc-crow"><span class="csc-crow-k">Taxa adm. total</span><span class="csc-crow-v">${d.taxaAdm}%</span></div>
       ${S.seguro ? `<div class="csc-crow"><span class="csc-crow-k">Seguro</span><span class="csc-crow-v" style="color:#1440fe">✅ Incluído</span></div>` : ""}
@@ -703,24 +743,13 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   /* ════ FLOW ════ */
 
   async function welcome() {
-    setProgress("welcome"); hideControls();
-    await sl(300);
+    setProgress("welcome"); hideControls(); await sl(300);
     await addBot("Olá! 👋 Bem-vindo ao <b>Autopilot Consórcios</b>.<br>Vou te ajudar a encontrar o plano ideal em poucos cliques.");
     await typing(700);
     await addBot("O que você pretende <b>fazer ou conquistar</b>?");
     inject(`<div class="csc-cards">
-      <div class="csc-card" id="cc-imovel">
-        <div class="csc-card-ico">🏠</div>
-        <div class="csc-card-lbl">Imóveis</div>
-        <div class="csc-card-sub">Casa, apê, terreno</div>
-        <div class="csc-card-plus">+</div>
-      </div>
-      <div class="csc-card" id="cc-veiculo">
-        <div class="csc-card-ico">🚗</div>
-        <div class="csc-card-lbl">Veículos</div>
-        <div class="csc-card-sub">Carro, moto, caminhão</div>
-        <div class="csc-card-plus">+</div>
-      </div>
+      <div class="csc-card" id="cc-imovel"><div class="csc-card-ico">🏠</div><div class="csc-card-lbl">Imóveis</div><div class="csc-card-sub">Casa, apê, terreno</div><div class="csc-card-plus">+</div></div>
+      <div class="csc-card" id="cc-veiculo"><div class="csc-card-ico">🚗</div><div class="csc-card-lbl">Veículos</div><div class="csc-card-sub">Carro, moto, caminhão</div><div class="csc-card-plus">+</div></div>
     </div>`);
     $("cc-imovel").onclick  = () => pickTipo("imovel");
     $("cc-veiculo").onclick = () => pickTipo("veiculo");
@@ -739,39 +768,27 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   }
 
   async function pickTipo(t) {
-    S.tipo = t; S.mode = "carta";
-    S.valor = SLIDER[t].carta.min;
-    S.parcela = SLIDER[t].parcela.min;
+    S.tipo = t; S.mode = "carta"; S.valor = SLIDER[t].carta.min; S.parcela = SLIDER[t].parcela.min;
     setProgress("tipo"); hideControls();
     document.querySelectorAll(".csc-cards").forEach(el => el.parentElement?.remove());
     await addUsr(PROD[t].emoji + " " + PROD[t].label);
     await typing(800);
     await addBot("Ótimo! 💼 Qual o <b>valor</b> que você quer simular?");
-    inject(sliderHTML());
-    attachSlider();
+    inject(sliderHTML()); attachSlider();
     setReplies([{ label:"Continuar →", wide:true, cb:() => goValor() }]);
   }
 
   async function goValor() {
-    if (S.mode === "parcela") {
-      S.valor = parcelaToCarta(S.tipo, S.parcela || SLIDER[S.tipo].parcela.min, prazoRef(S.tipo));
-    }
+    if (S.mode === "parcela") S.valor = parcelaToCarta(S.tipo, S.parcela || SLIDER[S.tipo].parcela.min, prazoRef(S.tipo));
     if (!S.valor) S.valor = SLIDER[S.tipo].carta.min;
     setProgress("valor"); hideControls();
     document.querySelector(".csc-slider-wrap")?.parentElement?.remove();
-    const label = S.mode === "parcela"
-      ? `Parcela de ${fmt(S.parcela)}/mês → Carta ~${fmt(S.valor)}`
-      : fmt(S.valor);
-    await addUsr(label);
-    await typing(700);
+    const label = S.mode === "parcela" ? `Parcela de ${fmt(S.parcela)}/mês → Carta ~${fmt(S.valor)}` : fmt(S.valor);
+    await addUsr(label); await typing(700);
     await addBot("Em <b>quantas parcelas</b> você quer pagar?");
     const wrap = inject(`<div class="csc-pills">${PROD[S.tipo].prazo.map(p => `<button class="csc-pill" data-p="${p}">${p}x</button>`).join("")}</div>`);
     wrap.querySelectorAll(".csc-pill").forEach(btn => {
-      btn.onclick = () => {
-        wrap.querySelectorAll(".csc-pill").forEach(x => x.classList.remove("on"));
-        btn.classList.add("on");
-        S.prazo = parseInt(btn.dataset.p);
-      };
+      btn.onclick = () => { wrap.querySelectorAll(".csc-pill").forEach(x => x.classList.remove("on")); btn.classList.add("on"); S.prazo = parseInt(btn.dataset.p); };
     });
     setReplies([{ label:"Ver simulação →", wide:true, cb:() => { if (!S.prazo) return; goPrazo(); } }]);
   }
@@ -779,12 +796,10 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   async function goPrazo() {
     setProgress("prazo"); hideControls();
     document.querySelector(".csc-pills")?.parentElement?.remove();
-    await addUsr(`${S.prazo} parcelas`);
-    await typing(1200);
+    await addUsr(`${S.prazo} parcelas`); await typing(1200);
     S.simData = calc(S.tipo, S.valor, S.prazo);
     await addBot("Calculei sua simulação! 🎯");
-    inject(resultHTML());
-    await typing(600);
+    inject(resultHTML()); await typing(600);
     await addBot(`Parcela de <b class="g">${fmt(S.simData.parcela)}/mês</b> para uma carta de <b>${fmt(S.valor)}</b>. O que achou? 😊`);
     setReplies([
       { label:"✅ Quero contratar!", wide:true, cb:() => goConfirm() },
@@ -794,44 +809,95 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 
   async function goConfirm() {
     setProgress("confirm"); hideControls();
-    await addUsr("Quero contratar!");
-    await typing(800);
+    await addUsr("Quero contratar!"); await typing(800);
     await addBot("Excelente! 🎉 Preciso de alguns dados para gerar seu contrato.<br>Qual é o seu <b>nome completo</b>?");
-    showInput("Seu nome completo…", v => { S.nome = v; addUsr(v).then(() => goTel()); });
+    showInput("Seu nome completo…", v => { S.nome = v; addUsr(v).then(() => goTel()); }, { mask:"nome" });
   }
 
   async function goTel() {
     setProgress("tel"); await typing(700);
     await addBot(`Prazer, <b>${S.nome.split(" ")[0]}</b>! 😊 Qual é o seu <b>telefone com DDD</b>?`);
-    showInput("(00) 00000-0000", v => { S.tel = v; addUsr(v).then(() => goCpf()); }, { max: 20 });
+    showInput("(00) 00000-0000", v => { S.tel = v; addUsr(v).then(() => goCpf()); }, { mask:"tel", inputMode:"numeric", max:15 });
   }
 
   async function goCpf() {
     setProgress("cpf"); await typing(600);
-    await addBot("Qual é o seu <b>CPF ou CNPJ</b>?");
-    showInput("000.000.000-00", v => { S.cpf = v; addUsr(v).then(() => goNascimento()); }, { max: 18 });
+    await addBot("Qual é o seu <b>CPF</b> ou <b>CNPJ</b>?");
+    showInput("000.000.000-00 ou CNPJ", v => { S.cpf = v; addUsr(v).then(() => goNascimento()); }, { mask:"cpf", inputMode:"numeric", max:18 });
   }
 
   async function goNascimento() {
     setProgress("nascimento"); await typing(600);
     await addBot("Qual é a sua <b>data de nascimento</b>?");
-    showInput("DD/MM/AAAA", v => { S.nascimento = v; addUsr(v).then(() => goEmail()); }, { max: 10 });
+    showInput("DD/MM/AAAA", v => { S.nascimento = v; addUsr(v).then(() => goEmail()); }, { mask:"nascimento", inputMode:"numeric", max:10 });
   }
 
   async function goEmail() {
     setProgress("email"); await typing(600);
     await addBot("E seu <b>e-mail</b> para receber o contrato?");
-    showInput("seuemail@exemplo.com", v => { S.email = v; addUsr(v).then(() => goCep()); });
+    showInput("seuemail@exemplo.com", v => { S.email = v; addUsr(v).then(() => goCep()); }, { mask:"email", inputMode:"email" });
   }
 
   async function goCep() {
     setProgress("cep"); await typing(700);
     await addBot("Agora vamos ao seu <b>endereço</b>. 📍<br>Qual é o seu <b>CEP</b>?");
-    showInput("00000-000", v => { S.cep = v; addUsr(v).then(() => goRua()); }, { max: 9 });
+    showInput("00000-000", async v => {
+      S.cep = v;
+      await addUsr(v);
+      await buscaCep(v);
+    }, { mask:"cep", inputMode:"numeric", max:9 });
   }
 
-  async function goRua() {
-    setProgress("rua"); await typing(600);
+  /* ─── BUSCA VIACEP ─── */
+  async function buscaCep(cep) {
+    const digits = cep.replace(/\D/g,"");
+    hideControls();
+    await typing(900);
+
+    let data = null;
+    try {
+      const res = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
+      data = await res.json();
+    } catch(e) { data = null; }
+
+    // CEP inválido ou não encontrado
+    if (!data || data.erro) {
+      await addBot("Hmm, não encontrei esse CEP. 🤔 Pode digitar novamente ou informar o endereço manualmente.");
+      setReplies([
+        { label:"🔄 Tentar outro CEP", wide:true, cb:() => goCep() },
+        { label:"✏️ Digitar manualmente", sec:true, cb:() => goRuaManual() }
+      ]);
+      return;
+    }
+
+    // Preenche estado automaticamente
+    S.estado = data.uf || "";
+    S.cidade = data.localidade || "";
+    S.rua    = data.logradouro || "";
+    S.bairro = data.bairro || "";
+
+    // Monta resumo visual do que foi encontrado
+    const linhas = [
+      data.logradouro ? `🏠 <b>${data.logradouro}</b>` : null,
+      data.bairro     ? `🏘️ ${data.bairro}` : null,
+      `🌆 ${data.localidade} / ${data.uf}`
+    ].filter(Boolean).join("<br>");
+
+    await addBot(`Encontrei o endereço! ✅<br>${linhas}`);
+    await sl(400);
+
+    // Se a API não retornou logradouro (CEPs de cidades pequenas), pede manualmente
+    if (!data.logradouro) {
+      await typing(600);
+      await addBot("Não consegui identificar a rua pelo CEP. Qual é o nome da sua <b>rua / logradouro</b>?");
+      showInput("Nome da rua…", v => { S.rua = v; addUsr(v).then(() => goNumero()); });
+    } else {
+      await goNumero();
+    }
+  }
+
+  async function goRuaManual() {
+    setProgress("rua"); await typing(500);
     await addBot("Qual é o nome da sua <b>rua / logradouro</b>?");
     showInput("Nome da rua…", v => { S.rua = v; addUsr(v).then(() => goNumero()); });
   }
@@ -839,13 +905,20 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   async function goNumero() {
     setProgress("numero"); await typing(500);
     await addBot("Qual é o <b>número</b>?");
-    showInput("Número…", v => { S.numero = v; addUsr(v).then(() => goComplemento()); }, { max: 10 });
+    showInput("Número…", v => { S.numero = v; addUsr(v).then(() => goComplemento()); }, { mask:"numero", inputMode:"numeric", max:10 });
   }
 
   async function goComplemento() {
     setProgress("complemento"); await typing(500);
-    await addBot("Tem <b>complemento</b>? (apto, bloco, casa…)<br><small style='color:#aaa'>Digite ou deixe em branco e pressione Enter</small>");
-    showInput("Apto 12, Bloco B… (opcional)", v => { S.complemento = v; addUsr(v || "Sem complemento").then(() => goCidade()); });
+    await addBot("Tem <b>complemento</b>? (apto, bloco, casa…)<br><small style='color:#aaa'>Digite ou pressione Enter para pular</small>");
+    showInput("Apto 12, Bloco B… (opcional)", v => {
+      S.complemento = v;
+      addUsr(v || "Sem complemento").then(() => {
+        // Se cidade/estado já foram preenchidos pelo ViaCEP, pula direto para renda
+        if (S.cidade && S.estado) goRenda();
+        else goCidade();
+      });
+    });
   }
 
   async function goCidade() {
@@ -876,19 +949,17 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   }
 
   async function goResumo() {
-    setProgress("resumo"); hideControls();
-    await typing(1000);
+    setProgress("resumo"); hideControls(); await typing(1000);
     await addBot("Perfeito! 📋 Confira o <b>resumo do seu cadastro</b> antes de prosseguir:");
-    inject(summaryHTML());
-    await typing(500);
+    inject(summaryHTML()); await typing(500);
     await addBot("Os dados estão corretos?");
     setReplies([
       { label:"✅ Confirmar cadastro", wide:true, cb:() => goSeguro() },
       { label:"✏️ Corrigir dados", sec:true, cb:() => {
         hideControls();
         addUsr("Quero corrigir os dados").then(() => typing(600).then(() => {
-          addBot("Sem problema! Vamos rever seus dados. 😊<br>Qual é o seu <b>nome completo</b>?");
-          showInput("Seu nome completo…", v => { S.nome = v; addUsr(v).then(() => goTel()); });
+          addBot("Sem problema! 😊 Vamos rever. Qual é o seu <b>nome completo</b>?");
+          showInput("Seu nome completo…", v => { S.nome = v; addUsr(v).then(() => goTel()); }, { mask:"nome" });
         }));
       }}
     ]);
@@ -896,11 +967,9 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 
   async function goSeguro() {
     setProgress("seguro"); hideControls();
-    await addUsr("Confirmar cadastro");
-    await typing(1000);
+    await addUsr("Confirmar cadastro"); await typing(1000);
     await addBot("Ótimo! 🛡️ Que tal proteger sua cota com o <b>Seguro Consórcio</b>?");
-    inject(seguroHTML());
-    await typing(400);
+    inject(seguroHTML()); await typing(400);
     await addBot("Deseja adicionar o seguro ao seu plano?");
     setReplies([
       { label:"✅ Sim, quero o seguro", wide:true, cb:() => { S.seguro = true;  addUsr("Sim, quero o seguro").then(() => goPagamento()); } },
@@ -909,8 +978,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   }
 
   async function goPagamento() {
-    setProgress("pagamento");
-    await typing(800);
+    setProgress("pagamento"); await typing(800);
     await addBot(`Vamos ao <b>pagamento da 1ª parcela</b> de <b class="g">${fmt(S.simData.parcela)}</b>.<br>Escolha a forma de pagamento:`);
     inject(`<div class="csc-pay-btns">
       <div class="csc-pay-opt" id="csc-p-pix"><div class="csc-pay-ico" style="background:rgba(20,64,254,.08)">⚡</div><div class="csc-pay-info"><div class="csc-pay-name">PIX</div><div class="csc-pay-desc">Confirmação imediata</div></div><span class="csc-pay-arrow">›</span></div>
@@ -928,8 +996,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   async function goPix() {
     setProgress("pix"); hideControls();
     document.querySelector(".csc-pay-btns")?.parentElement?.remove();
-    await addUsr("PIX"); await typing(1000);
-    inject(pixHTML());
+    await addUsr("PIX"); await typing(1000); inject(pixHTML());
     setTimeout(() => {
       const cp = $("csc-pix-copy"), ok = $("csc-pix-ok");
       if (cp) cp.onclick = () => { cp.textContent = "✓ Chave copiada!"; cp.style.background = "#dde5ff"; };
@@ -940,8 +1007,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   async function goCartao() {
     setProgress("cartao"); hideControls();
     document.querySelector(".csc-pay-btns")?.parentElement?.remove();
-    await addUsr("Cartão de Crédito"); await typing(800);
-    inject(cartaoHTML());
+    await addUsr("Cartão de Crédito"); await typing(800); inject(cartaoHTML());
     setTimeout(() => {
       const cc = $("csc-cc"), ok = $("csc-card-ok");
       if (cc) cc.addEventListener("input", e => { let v = e.target.value.replace(/\D/g,"").slice(0,16); e.target.value = v.replace(/(.{4})/g,"$1 ").trim(); });
@@ -952,8 +1018,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   async function goBoleto() {
     setProgress("boleto"); hideControls();
     document.querySelector(".csc-pay-btns")?.parentElement?.remove();
-    await addUsr("Boleto Bancário"); await typing(1100);
-    inject(boletoHTML());
+    await addUsr("Boleto Bancário"); await typing(1100); inject(boletoHTML());
     setTimeout(() => {
       const cp = $("csc-bol-copy"), ok = $("csc-bol-ok");
       if (cp) cp.onclick = () => { cp.textContent = "✓ Código copiado!"; };
@@ -962,33 +1027,25 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   }
 
   async function goPagamentoConfirmado() {
-    setProgress("contrato"); hideControls();
-    await typing(1400);
+    setProgress("contrato"); hideControls(); await typing(1400);
     await addBot("✅ Pagamento confirmado! Gerando seu <b>contrato oficial</b>…");
-    inject(contractHTML());
-    await typing(500);
+    inject(contractHTML()); await typing(500);
     await addBot("Leia atentamente e assine digitalmente para concluir. ✍️");
     setTimeout(() => {
-      const btn = $("csc-sign"), sig = $("csc-signed");
-      if (!btn) return;
+      const btn = $("csc-sign"), sig = $("csc-signed"); if (!btn) return;
       btn.onclick = async () => {
-        btn.textContent = "Assinando…"; btn.disabled = true;
-        await sl(1400);
-        btn.style.display = "none"; sig.style.display = "block";
-        await sl(600);
+        btn.textContent = "Assinando…"; btn.disabled = true; await sl(1400);
+        btn.style.display = "none"; sig.style.display = "block"; await sl(600);
         await addBot(`Contrato assinado com sucesso! 🎉<br>Cópia enviada para <b>${S.email}</b>.`);
-        await sl(800);
-        goFim();
+        await sl(800); goFim();
       };
     }, 300);
   }
 
   async function goFim() {
-    setProgress("fim"); hideControls();
-    await typing(1200);
+    setProgress("fim"); hideControls(); await typing(1200);
     await addBot("🎊 Emitindo seu contrato definitivo…");
-    inject(emitHTML());
-    await typing(800);
+    inject(emitHTML()); await typing(800);
     inject(`<div class="csc-success">
       <div class="csc-success-ani">🎉</div>
       <div class="csc-success-ttl">Cota Ativa!</div>
@@ -1001,7 +1058,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
       setReplies([
         { label:"🔄 Nova simulação", cb:() => {
           msgs().innerHTML = "";
-          Object.assign(S, { tipo:null, valor:0, parcela:0, mode:"carta", prazo:0, nome:"", tel:"", cpf:"", nascimento:"", email:"", cep:"", rua:"", numero:"", complemento:"", cidade:"", estado:"", renda:"", seguro:false, contractId:null, simData:null });
+          Object.assign(S, { tipo:null,valor:0,parcela:0,mode:"carta",prazo:0,nome:"",tel:"",cpf:"",nascimento:"",email:"",cep:"",rua:"",bairro:"",numero:"",complemento:"",cidade:"",estado:"",renda:"",seguro:false,contractId:null,simData:null });
           welcome();
         }},
         { label:"🚪 Encerrar atendimento", sec:true, cb:() => goEncerrar() }
@@ -1011,8 +1068,7 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
 
   async function goEncerrar() {
     setProgress("bye"); hideControls();
-    await addUsr("Encerrar atendimento");
-    await typing(800);
+    await addUsr("Encerrar atendimento"); await typing(800);
     await addBot(`Foi um prazer te atender, <b>${S.nome.split(" ")[0]}</b>! 😊<br>Até a próxima!`);
     inject(`<div class="csc-bye">
       <div class="csc-bye-ani">👋</div>
