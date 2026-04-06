@@ -429,31 +429,51 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
   }
 
   /* ─── MÁSCARAS ─── */
+  // Máscaras numéricas: recebem string bruta, extraem dígitos e retornam formatado.
+  // O cursor é sempre mandado para o final (digitação sequencial da esquerda p/ direita).
   const MASKS = {
-    tel: v => {
-      v = v.replace(/\D/g,"").slice(0,11);
-      if (v.length <= 10) return v.replace(/(\d{2})(\d{4})(\d{0,4})/,"($1) $2-$3").replace(/-$/,"");
-      return v.replace(/(\d{2})(\d{5})(\d{0,4})/,"($1) $2-$3").replace(/-$/,"");
+    tel: raw => {
+      const d = raw.replace(/\D/g,"").slice(0,11);
+      if (d.length === 0) return "";
+      if (d.length <= 2)  return "(" + d;
+      if (d.length <= 6)  return "(" + d.slice(0,2) + ") " + d.slice(2);
+      if (d.length <= 10) return "(" + d.slice(0,2) + ") " + d.slice(2,6) + "-" + d.slice(6);
+      return "(" + d.slice(0,2) + ") " + d.slice(2,7) + "-" + d.slice(7);
     },
-    cpf: v => {
-      v = v.replace(/\D/g,"");
-      if (v.length <= 11)
-        return v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/,"$1.$2.$3-$4").replace(/[.\-]+$/,"");
-      return v.slice(0,14).replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})/,"$1.$2.$3/$4-$5").replace(/[.\-\/]+$/,"");
+    cpf: raw => {
+      const d = raw.replace(/\D/g,"");
+      if (d.length <= 11) {
+        const n = d.slice(0,11);
+        if (n.length <= 3)  return n;
+        if (n.length <= 6)  return n.slice(0,3) + "." + n.slice(3);
+        if (n.length <= 9)  return n.slice(0,3) + "." + n.slice(3,6) + "." + n.slice(6);
+        return n.slice(0,3) + "." + n.slice(3,6) + "." + n.slice(6,9) + "-" + n.slice(9);
+      }
+      const n = d.slice(0,14);
+      if (n.length <= 2)  return n;
+      if (n.length <= 5)  return n.slice(0,2) + "." + n.slice(2);
+      if (n.length <= 8)  return n.slice(0,2) + "." + n.slice(2,5) + "." + n.slice(5);
+      if (n.length <= 12) return n.slice(0,2) + "." + n.slice(2,5) + "." + n.slice(5,8) + "/" + n.slice(8);
+      return n.slice(0,2) + "." + n.slice(2,5) + "." + n.slice(5,8) + "/" + n.slice(8,12) + "-" + n.slice(12);
     },
-    nascimento: v => {
-      v = v.replace(/\D/g,"").slice(0,8);
-      return v.replace(/(\d{2})(\d{2})(\d{0,4})/,"$1/$2/$3").replace(/\/+$/,"");
+    nascimento: raw => {
+      const d = raw.replace(/\D/g,"").slice(0,8);
+      if (d.length <= 2) return d;
+      if (d.length <= 4) return d.slice(0,2) + "/" + d.slice(2);
+      return d.slice(0,2) + "/" + d.slice(2,4) + "/" + d.slice(4);
     },
-    cep: v => {
-      v = v.replace(/\D/g,"").slice(0,8);
-      return v.replace(/(\d{5})(\d{0,3})/,"$1-$2").replace(/-$/,"");
+    cep: raw => {
+      const d = raw.replace(/\D/g,"").slice(0,8);
+      if (d.length <= 5) return d;
+      return d.slice(0,5) + "-" + d.slice(5);
     },
-    nome:    v => v.replace(/[^a-zA-Z\u00C0-\u00FF\s]/g,""),
-    email:   v => v,
-    numero:  v => v.replace(/[^a-zA-Z0-9\-]/g,"").slice(0,10),
-    default: v => v
+    nome:    raw => raw.replace(/[^a-zA-Z\u00C0-\u00FF\s]/g,""),
+    email:   raw => raw,
+    numero:  raw => raw.replace(/[^a-zA-Z0-9\-]/g,"").slice(0,10),
+    default: raw => raw
   };
+
+  const NUMERIC_MASKS = ["tel","cpf","nascimento","cep"];
 
   function showInput(ph, cb, opts) {
     $("csc-replies").style.display = "none";
@@ -466,19 +486,33 @@ html, body { margin: 0; padding: 0; height: 100%; background: transparent; overf
     if (opts && opts.max) i.maxLength = opts.max; else i.removeAttribute("maxlength");
 
     const mask = (opts && opts.mask) ? opts.mask : null;
+    const fn = mask ? (MASKS[mask] || MASKS.default) : null;
 
     function onInput() {
-      if (!mask) return;
-      const pos = i.selectionStart;
-      const masked = (MASKS[mask] || MASKS.default)(i.value);
-      if (masked !== i.value) { i.value = masked; try { i.setSelectionRange(pos, pos); } catch(e){} }
+      if (!fn) return;
+      if (NUMERIC_MASKS.includes(mask)) {
+        // Para máscaras numéricas: extrai dígitos → formata → coloca cursor no final.
+        // Isso evita que o cursor "pule" para trás quando um separador é inserido.
+        const formatted = fn(i.value);
+        i.value = formatted;
+        const end = formatted.length;
+        try { i.setSelectionRange(end, end); } catch(e){}
+      } else {
+        // Para campos de texto (nome, etc): filtra sem mover cursor
+        const cur = i.selectionStart;
+        const filtered = fn(i.value);
+        if (filtered !== i.value) {
+          i.value = filtered;
+          try { i.setSelectionRange(cur, cur); } catch(e){}
+        }
+      }
     }
     i.addEventListener("input", onInput);
     setTimeout(() => i.focus(), 100);
 
     function shake() {
       i.classList.remove("csc-inp-error");
-      void i.offsetWidth; // reflow
+      void i.offsetWidth;
       i.classList.add("csc-inp-error");
       setTimeout(() => i.classList.remove("csc-inp-error"), 500);
     }
