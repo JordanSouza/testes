@@ -1,3 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Autopilot Consórcios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and base styles for the page background */
+        body {
+            background-color: #05080F; /* Dark background for the whole page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* --- INÍCIO DO CSS DO SIMULADOR (DARK THEME) --- */
+        #simulador-consorcio { width: 100%; max-width: 420px; margin: 0 auto; }
+        .csc-widget {
+          font-family: 'Nunito', sans-serif; background: #0B0F19; border-radius: 22px;
+          box-shadow: 0 12px 60px rgba(0,0,0,.4), 0 2px 8px rgba(0,0,0,.2);
+          overflow: hidden; display: flex; flex-direction: column;
+          max-height: 680px; min-height: 540px; position: relative; color: #e2e8f0;
+        }
+        .csc-header {
+          background: #0B0F19; border-bottom: 1px solid #1A2235;
+          padding: 18px 20px 16px; display: flex; align-items: center; justify-content: space-between;
+          flex-shrink: 0; position: relative; overflow: hidden;
+        }
+        .csc-logo { display:flex; align-items:center; gap:8px; z-index:1; }
+        .csc-logo-ico {
+          width:34px; height:34px; background: transparent; border-radius:8px; display:flex; align-items:center; justify-content:center;
+          font-size:.85rem; font-weight:900; color:#fff; border:1px solid rgba(255,255,255,.2);
+        }
+        .csc-logo-txt { color:#fff; font-weight:800; font-size:.9rem; line-height:1.2; }
+        .csc-logo-txt span { display:block; font-size:.62rem; font-weight:600; opacity:.6; letter-spacing:.04em; text-transform:uppercase; }
+        .csc-wpp-btn {
+          z-index:1; background: #25D366; border-radius:20px; padding:6px 12px; display:flex; align-items:center; gap:6px;
+          color:#fff; font-size:.72rem; font-weight:800; cursor:pointer;
+          text-decoration:none; transition:transform .15s;
+          letter-spacing:.03em; text-transform:uppercase; border: none;
+        }
+        .csc-wpp-btn:hover { transform: scale(1.05); }
+        .csc-steps { background:#0B0F19; border-bottom:1px solid #1A2235; padding:8px 20px; display:flex; align-items:center; gap:8px; flex-shrink:0; }
+        .csc-step-dot { width:8px; height:8px; border-radius:50%; background:#1A2235; transition:all .3s; flex-shrink:0; }
+        .csc-step-dot.done  { background:#3B82F6; }
+        .csc-step-dot.active { background:#fff; width:22px; border-radius:4px; }
+        .csc-step-label { margin-left:auto; font-size:.65rem; font-weight:700; color:#64748B; letter-spacing:.05em; text-transform:uppercase; }
+        .csc-msgs { flex:1; overflow-y:auto; padding:18px 16px 10px; display:flex; flex-direction:column; gap:10px; scroll-behavior:smooth; background:#0B0F19; }
+        .csc-msgs::-webkit-scrollbar { width:3px; }
+        .csc-msgs::-webkit-scrollbar-thumb { background:#1A2235; border-radius:2px; }
+        .csc-row { display:flex; align-items:flex-end; gap:8px; }
+        .csc-row.usr { flex-direction:row-reverse; }
+        .csc-ava {
+          width:30px; height:30px; border-radius:50%; flex-shrink:0; background:#1A2235; border: 1px solid #2A354D;
+          display:flex; align-items:center; justify-content:center; font-size:.8rem; color: #fff;
+        }
+        .csc-bub {
+          max-width:78%; padding:11px 14px; border-radius:18px; font-size:.88rem; line-height:1.55;
+          animation:csc-in .2s ease; position:relative; word-wrap:break-word;
+        }
+        @keyframes csc-in { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+        .csc-row.bot .csc-bub { background:#161D2B; color:#F8FAFC; border-bottom-left-radius:4px; border: 1px solid #1A2235; }
+        .csc-row.usr .csc-bub { background:#1A3DF9; color:#fff; border-bottom-right-radius:4px; }
+        .csc-bub b { font-weight:800; color: #fff; }
+        .csc-bub .g { color:#60A5FA; }
+        .csc-time { font-size:.58rem; color:#475569; margin-top:2px; align-self:flex-end; }
+        .csc-row.usr .csc-time { text-align:right; }
+        .csc-typing { display:flex; gap:4px; align-items:center; padding:8px 2px; }
+        .csc-tdot { width:7px; height:7px; border-radius:50%; background:#475569; animation:csc-td .8s infinite ease-in-out; }
+        .csc-tdot:nth-child(2) { animation-delay:.14s; }
+        .csc-tdot:nth-child(3) { animation-delay:.28s; }
+        @keyframes csc-td { 0%,60%,100%{transform:translateY(0);background:#475569} 30%{transform:translateY(-5px);background:#fff} }
+        .csc-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:4px 14px 0; animation:csc-in .25s ease; }
+        .csc-card {
+          background:#161D2B; border:1px solid #1A2235; border-radius:16px; padding:18px 12px 14px; text-align:center; cursor:pointer;
+          transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:6px;
+        }
+        .csc-card:hover { border-color:#1A3DF9; transform:translateY(-2px); box-shadow:0 6px 24px rgba(26,61,249,.15); }
+        .csc-card-ico {
+          width:60px; height:60px; border-radius:50%; background:#1A2235;
+          display:flex; align-items:center; justify-content:center; font-size:1.7rem;
+        }
+        .csc-card-lbl { font-weight:800; font-size:.85rem; color:#fff; }
+        .csc-card-sub { font-size:.68rem; color:#64748B; line-height:1.4; }
+        .csc-card-plus {
+          width:22px; height:22px; border-radius:50%; border:1px solid #2A354D; color:#94A3B8; background:#0B0F19;
+          display:flex; align-items:center; justify-content:center; font-size:.9rem; font-weight:700; transition:all .15s;
+        }
+        .csc-card:hover .csc-card-plus { background:#1A3DF9; color:#fff; border-color:#1A3DF9; }
+        .csc-slider-wrap { background:#161D2B; border-radius:16px; padding:18px 16px; border: 1px solid #1A2235; margin:4px 14px 0; animation:csc-in .25s ease; }
+        .csc-slider-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+        .csc-slider-lbl { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:#64748B; }
+        .csc-slider-mode { display:flex; background:#0B0F19; border-radius:20px; padding:3px; gap:0; }
+        .csc-mode-btn { padding:5px 12px; border-radius:16px; font-size:.7rem; font-weight:700; border:none; cursor:pointer; background:transparent; color:#64748B; transition:all .15s; font-family:'Nunito',sans-serif; }
+        .csc-mode-btn.on { background:#1A3DF9; color:#fff; }
+        .csc-val-display { font-size:2rem; font-weight:900; color:#fff; text-align:center; margin:8px 0; letter-spacing:-.03em; }
+        .csc-val-display span.prefix { font-size:1rem; font-weight:600; color:#64748B; margin-right:4px; }
+        .csc-range { width:100%; height:5px; -webkit-appearance:none; appearance:none; border-radius:10px; outline:none; cursor:pointer; background:linear-gradient(90deg,#1A3DF9 var(--pct,10%),#1A2235 var(--pct,10%)); }
+        .csc-range::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:#1A3DF9; cursor:pointer; border:3px solid #fff; box-shadow:0 2px 8px rgba(26,61,249,.4); }
+        .csc-range-labels { display:flex; justify-content:space-between; font-size:.67rem; color:#64748B; margin-top:6px; font-weight:600; }
+        .csc-pills { display:flex; flex-wrap:wrap; gap:7px; margin:4px 14px 0; animation:csc-in .25s ease; }
+        .csc-pill { padding:8px 16px; border-radius:22px; border:1px solid #1A2235; font-size:.8rem; font-weight:700; cursor:pointer; background:#161D2B; transition:all .15s; color:#94A3B8; font-family:'Nunito',sans-serif; }
+        .csc-pill:hover { border-color:#1A3DF9; color:#fff; }
+        .csc-pill.on { background:#1A3DF9; border-color:#1A3DF9; color:#fff; }
+        .csc-result { background:#161D2B; border-radius:16px; overflow:hidden; border: 1px solid #1A2235; margin:4px 14px 0; animation:csc-in .25s ease; }
+        .csc-result-header { background:linear-gradient(120deg,#1A3DF9,#0B0F19); padding:14px 16px; color:#fff; }
+        .csc-result-tipo { font-size:.65rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; opacity:.75; margin-bottom:2px; }
+        .csc-result-parcela { font-size:1.8rem; font-weight:900; letter-spacing:-.03em; }
+        .csc-result-parcela small { font-size:.85rem; font-weight:600; opacity:.75; margin-left:3px; }
+        .csc-result-credito { font-size:.78rem; opacity:.8; margin-top:2px; }
+        .csc-result-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:#0B0F19; }
+        .csc-ritem { background:#161D2B; padding:11px 14px; }
+        .csc-ritem-l { font-size:.62rem; text-transform:uppercase; letter-spacing:.07em; font-weight:700; color:#64748B; margin-bottom:3px; }
+        .csc-ritem-v { font-size:.88rem; font-weight:800; color:#fff; }
+        .csc-ritem-v.g { color:#60A5FA; }
+        .csc-badge-row { padding:10px 14px; border-top: 1px solid #1A2235; }
+        .csc-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(96,165,250,.1); border:1px solid rgba(96,165,250,.2); border-radius:20px; padding:4px 10px; font-size:.7rem; font-weight:700; color:#60A5FA; }
+        .csc-success { text-align:center; padding:8px 4px; animation:csc-in .25s ease; margin:4px 14px 0; }
+        .csc-success-ani { font-size:2.6rem; animation:csc-pop .5s cubic-bezier(.34,1.56,.64,1); margin-bottom:8px; }
+        .csc-success-ttl { font-weight:900; font-size:1.1rem; color:#fff; margin-bottom:6px; }
+        .csc-success-txt { font-size:.82rem; color:#94A3B8; line-height:1.5; }
+        .csc-replies { display:none; flex-wrap:wrap; gap:7px; padding:10px 14px 12px; background:#0B0F19; border-top:1px solid #1A2235; flex-shrink:0; }
+        .csc-reply { padding:8px 16px; border-radius:22px; border:1px solid #1A3DF9; font-size:.8rem; font-weight:700; cursor:pointer; color:#1A3DF9; background:#161D2B; transition:all .15s; font-family:'Nunito',sans-serif; }
+        .csc-reply:hover { background:#1A3DF9; color:#fff; }
+        .csc-reply.wide { flex:1; text-align:center; }
+        .csc-reply.sec { color:#94A3B8; border-color:#2A354D; background:#161D2B; }
+        .csc-reply.sec:hover { background:#1A2235; color:#fff; border-color:#475569; }
+        .csc-bottom { display:none; border-top:1px solid #1A2235; background:#0B0F19; padding:12px 14px; flex-shrink:0; }
+        .csc-inp-wrap { display:none; align-items:center; gap:8px; }
+        .csc-inp-wrap.on { display:flex; }
+        .csc-text-inp { flex:1; border:1px solid #2A354D; border-radius:24px; padding:10px 16px; font-size:.85rem; font-family:'Nunito',sans-serif; outline:none; transition:border-color .15s; background:#161D2B; color:#fff; }
+        .csc-text-inp:focus { border-color:#1A3DF9; }
+        .csc-text-inp::placeholder { color:#475569; }
+        .csc-send { width:40px; height:40px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,#1A3DF9,#0e26a8); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:.85rem; color:#fff; box-shadow:0 4px 12px rgba(26,61,249,.35); transition:transform .12s; }
+        .csc-send:hover { transform:scale(1.08); }
+    </style>
+</head>
+<body>
+
+<div id="simulador-consorcio">
+    <div class="csc-widget">
+        <div class="csc-header">
+            <div class="csc-logo">
+                <div class="csc-logo-ico">AC</div>
+                <div class="csc-logo-txt">Autopilot Consórcios<span>Simulador Digital</span></div>
+            </div>
+            <a class="csc-wpp-btn" href="https://wa.me/5500000000000" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.122 1.527 5.855L.057 23.998l6.305-1.655A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.497-5.18-1.367l-.371-.22-3.844 1.008 1.027-3.741-.241-.385A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+        <div class="csc-steps">
+            <div class="csc-step-dot active"></div><div class="csc-step-dot"></div>
+            <div class="csc-step-dot"></div><div class="csc-step-dot"></div>
+            <div class="csc-step-dot"></div><div class="csc-step-dot"></div>
+            <div class="csc-step-dot"></div><div class="csc-step-dot"></div>
+            <span class="csc-step-label" id="csc-step-lbl">Início</span>
+        </div>
+        <div class="csc-msgs" id="csc-msgs"></div>
+        <div class="csc-replies" id="csc-replies"></div>
+        <div class="csc-bottom" id="csc-bottom">
+            <div class="csc-inp-wrap" id="csc-inp-wrap">
+                <input type="text" class="csc-text-inp" id="csc-inp" placeholder="" autocomplete="off">
+                <button class="csc-send" id="csc-send">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
@@ -308,3 +485,5 @@ document.addEventListener("DOMContentLoaded", function () {
   welcome();
 });
 </script>
+</body>
+</html>
